@@ -5,10 +5,12 @@
 
 ## Overview
 
-Simple starter C++ project with:
+A C++ implemntation for A* Path Planning algorithm. (More information would be updated soon)
 
-- cmake
-- googletest
+## Product Backlog and Sprint Schedule
+
+Please vist the link at:
+https://docs.google.com/a/terpmail.umd.edu/spreadsheets/d/12z8tL9RKelgzJ8GJdyQ-GIjZYogpATpe3jIa_0ffNng/edit?usp=sharing
 
 ## Standard install via command-line
 ```
@@ -39,22 +41,22 @@ In your Eclipse workspace directory (or create a new one), checkout the repo (an
 ```
 mkdir -p ~/workspace
 cd ~/workspace
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/senthilarul/Midterm-APathPlanning.git
 ```
 
-In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of cpp-boilerplate
+In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of Midterm-APathPlanning
 
 ```
 cd ~/workspace
-mkdir -p boilerplate-eclipse
-cd boilerplate-eclipse
-cmake -G "Eclipse CDT4 - Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug -D CMAKE_ECLIPSE_VERSION=4.7.0 -D CMAKE_CXX_COMPILER_ARG1=-std=c++14 ../cpp-boilerplate/
+mkdir -p astar-eclipse
+cd astar-eclipse
+cmake -G "Eclipse CDT4 - Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug -D CMAKE_ECLIPSE_VERSION=4.7.0 -D CMAKE_CXX_COMPILER_ARG1=-std=c++14 ../Midterm-APathPlanning/
 ```
 
 ## Import
 
 Open Eclipse, go to File -> Import -> General -> Existing Projects into Workspace -> 
-Select "boilerplate-eclipse" directory created previously as root directory -> Finish
+Select "astar-eclipse" directory created previously as root directory -> Finish
 
 # Edit
 
@@ -63,12 +65,12 @@ Source files may be edited under the "[Source Directory]" label in the Project E
 
 ## Build
 
-To build the project, in Eclipse, unfold boilerplate-eclipse project in Project Explorer,
+To build the project, in Eclipse, unfold astar-eclipse project in Project Explorer,
 unfold Build Targets, double click on "all" to build all projects.
 
 ## Run
 
-1. In Eclipse, right click on the boilerplate-eclipse in Project Explorer,
+1. In Eclipse, right click on the astar-eclipse in Project Explorer,
 select Run As -> Local C/C++ Application
 
 2. Choose the binaries to run (e.g. shell-app, cpp-test for unit testing)
@@ -80,7 +82,7 @@ select Run As -> Local C/C++ Application
 1. Set breakpoint in source file (i.e. double click in the left margin on the line you want 
 the program to break).
 
-2. In Eclipse, right click on the boilerplate-eclipse in Project Explorer, select Debug As -> 
+2. In Eclipse, right click on the astar-eclipse in Project Explorer, select Debug As -> 
 Local C/C++ Application, choose the binaries to run (e.g. shell-app).
 
 3. If prompt to "Confirm Perspective Switch", select yes.
