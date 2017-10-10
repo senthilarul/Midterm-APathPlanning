@@ -1,6 +1,6 @@
-# C++ Boilerplate
-[![Build Status](https://travis-ci.org/dpiet/cpp-boilerplate.svg?branch=master)](https://travis-ci.org/dpiet/cpp-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/dpiet/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/dpiet/cpp-boilerplate?branch=master)
+# A* Path Planning - An C++ Implementation
+[![Build Status](https://travis-ci.org/senthilarul/Midterm-APathPlanning.svg?branch=master)](https://travis-ci.org/senthilarul/Midterm-APathPlanning)
+[![Coverage Status](https://coveralls.io/repos/github/senthilarul/Midterm-APathPlanning/badge.svg?branch=master)](https://coveralls.io/github/senthilarul/Midterm-APathPlanning?branch=master)
 ---
 
 ## Overview
@@ -12,7 +12,7 @@ Simple starter C++ project with:
 
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/senthilarul/Midterm-APathPlanning.git
 cd <path to repository>
 mkdir build
 cd build
