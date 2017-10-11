@@ -1,6 +1,7 @@
 # A* Path Planning - An C++ Implementation
 [![Build Status](https://travis-ci.org/senthilarul/Midterm-APathPlanning.svg?branch=master)](https://travis-ci.org/senthilarul/Midterm-APathPlanning)
 [![Coverage Status](https://coveralls.io/repos/github/senthilarul/Midterm-APathPlanning/badge.svg?branch=master)](https://coveralls.io/github/senthilarul/Midterm-APathPlanning?branch=master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ---
 
 ## Overview
