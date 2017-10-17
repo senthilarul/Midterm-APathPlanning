@@ -66,7 +66,11 @@ int main() {
         warehouseMap.loadMap(mapPath);
         warehouseMap.displayMap();
     }
-    std::cout<<"Enter Start and End points: "<<std::endl;
+    std::cout<<std::endl;
+    std::cout << "The numbers in the map indicate the node index ";
+    std::cout << "and \"X\" indicate obstacles. Enter the ";
+    std::cout << "node index of the Start and End points: ";
+    std::cout << std::endl;
     std::cin>>startPt>>endPt;
     bool success = a.createNodeList(warehouseMap, startPt-1,endPt-1);
     if(success == true) {

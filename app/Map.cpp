@@ -36,13 +36,14 @@
 
 void Map::displayMap() {
     std::vector<int> displayLayout = currentMap;
+    int node = 1;
     for(int i = 0; i < row; i++) {
         for(int j = 0; j < column; j++) {
             if(displayLayout[i*column + j] == 1) {
-                std::cout << "o";
+                std::cout << node++ <<"\t";
             }
             else {
-                std::cout << "x";
+                std::cout << "x" << "\t";
             }
         }
         std::cout << std::endl;
