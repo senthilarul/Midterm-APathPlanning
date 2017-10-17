@@ -34,4 +34,11 @@ TEST(AstarIdentifyNodeTest2, testIdentfyNodeForNodeCoOrdinate) {
     ASSERT_EQ(testAstar->identifyNode(0,2),2);
 }
 
+TEST(AstarPlanPathTest, testShortestPathForKnownMap) {
+    Map testMap;
+    testMap.storeMap(testMapArray);
+    testAstar->setStartPoint(2);
+    testAstar->setEndPoint(17);  
+    ASSERT_EQ(testAstar->planPath(),6);
+}
 
