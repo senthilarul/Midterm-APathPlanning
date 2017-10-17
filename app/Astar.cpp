@@ -249,13 +249,9 @@ void Astar::displayMap() {
     
     int sqW = 50;
     int iSqW = 45;
-    int xLength = mapColumn*sqW, yLength = mapRow*sqW;
+    int xLength = mapColumn*sqW, yLength = mapRow*sqW+40;
     Mat drawing;
     drawing = Mat::zeros(Size(xLength,yLength),CV_8UC3);
-    
-
-  
-
     for(int i = 0; i < mapRow; i++) {
         for(int j = 0; j < mapColumn; j++) {
             int pathFlag = 0;
@@ -289,15 +285,19 @@ void Astar::displayMap() {
                 rectangle(drawing,Point(j*sqW+2,i*sqW+2), Point(j*sqW+2+iSqW,i*sqW+2+iSqW), Scalar(128,128,128), -1, CV_AA, 0);
             }
             else
-                rectangle(drawing,Point(j*sqW,i*sqW), Point(j*sqW+sqW,i*sqW+sqW), Scalar(255,255,255), 1, CV_AA, 0);
-            
+                rectangle(drawing,Point(j*sqW,i*sqW), Point(j*sqW+sqW,i*sqW+sqW), Scalar(255,255,255), 1, CV_AA, 0);    
        }
-
     }
+    rectangle(drawing,Point(10,yLength-35), Point(20,yLength-25), Scalar(0,255,255), -1, CV_AA, 0);
+    putText(drawing,"- Start Point",Point(25,yLength-25), FONT_HERSHEY_SIMPLEX, 0.3,Scalar(255,255,255),1,LINE_AA);
+    rectangle(drawing,Point(100,yLength-35), Point(110,yLength-25), Scalar(0,0,255), -1, CV_AA, 0);
+    putText(drawing,"- End Point",Point(125,yLength-25), FONT_HERSHEY_SIMPLEX, 0.3,Scalar(255,255,255),1,LINE_AA);
+    rectangle(drawing,Point(10,yLength-15), Point(20,yLength-5), Scalar(0,255,0), -1, CV_AA, 0);
+    putText(drawing,"- Path",Point(25,yLength-10), FONT_HERSHEY_SIMPLEX, 0.3,Scalar(255,255,255),1,LINE_AA);
+    rectangle(drawing,Point(100,yLength-15), Point(110,yLength-5), Scalar(128,128,128), -1, CV_AA, 0);
+    putText(drawing,"- Obstacle",Point(125,yLength-10), FONT_HERSHEY_SIMPLEX, 0.3,Scalar(255,255,255),1,LINE_AA);
     imshow("Planned Path", drawing);
     waitKey(0);
-        
-        
 }
 
 bool priority( Layoutnodes &node1, Layoutnodes &node2) {
