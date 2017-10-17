@@ -8,6 +8,7 @@ std::vector<int> testMapArray1 {1,1,1,1,0,0,0,0,
 			        0,0,1,1,1,1,1,0,
 			        1,1,1,1,1,1,1,0};
 
+
 TEST(MapLoadMapTest, testLoadMapMethodWithDefaultMap)
 {
     testMap->loadMap("../Data/data1.csv");
