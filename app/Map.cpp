@@ -1,3 +1,36 @@
+/******************************************************************************
+*  MIT License
+*
+*  Copyright (c) 2017 Senthil Hariharan Arul
+*
+*  Permission is hereby granted, free of charge, to any person obtaining a copy
+*  of this software and associated documentation files (the "Software"), to deal
+*  in the Software without restriction, including without limitation the rights
+*  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+*  copies of the Software, and to permit persons to whom the Software is
+*  furnished to do so, subject to the following conditions:
+*
+*  The above copyright notice and this permission notice shall be included in all
+*  copies or substantial portions of the Software.
+*
+*  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+*  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+*  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+*  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+*  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+*  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+*  SOFTWARE.
+*******************************************************************************/
+
+/**
+ * @file      Map.cpp
+ * @author    Senthil Hariharan Arul
+ * @copyright MIT License
+ * @brief     Implements methods of Map class
+ * @detail    Converts input .csv file to vector of int, returns
+ *            number of column and rows 
+ */
+
 #include "Map.hpp"
 
 
@@ -41,6 +74,8 @@ void Map::loadMap(std::string mapPath) {
     }
     else {
         std::cout<<"The File path entered is not correct";
+        setColumn(0);
+        setRow(0);
     }
     setRow(rowCount);
 }
@@ -62,12 +97,12 @@ void Map::setColumn(int colCount) {
 }
 
 void Map::setRow(int rowCount) {
-    rowCount = row;
+    row = rowCount;
 }
 
-std::vector<int> Map::returnMap() {
-    return currentMap;
-}
+//std::vector<int> Map::returnMap() {
+  //  return currentMap;
+//}
 
 int* Map::returnDirection() {
     return moveDirection;

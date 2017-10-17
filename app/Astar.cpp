@@ -1,19 +1,46 @@
+/******************************************************************************
+*  MIT License
+*
+*  Copyright (c) 2017 Senthil Hariharan Arul
+*
+*  Permission is hereby granted, free of charge, to any person obtaining a copy
+*  of this software and associated documentation files (the "Software"), to deal
+*  in the Software without restriction, including without limitation the rights
+*  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+*  copies of the Software, and to permit persons to whom the Software is
+*  furnished to do so, subject to the following conditions:
+*
+*  The above copyright notice and this permission notice shall be included in all
+*  copies or substantial portions of the Software.
+*
+*  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+*  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+*  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+*  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+*  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+*  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+*  SOFTWARE.
+*******************************************************************************/
+
+/**
+ * @file      Astar.cpp
+ * @author    Senthil Hariharan Arul
+ * @copyright MIT License
+ * @brief     Implementation of Astar class methods
+ * @detail    Contains functions for path planning calculations and visualizing 
+ *            the path.
+ */
+
 #include <vector>
 #include <typeinfo>
 #include <math.h>
 #include "Astar.hpp"
 
-//opencv
-#include <opencv2/opencv.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/core/core.hpp>
-#include <stdio.h>
 
-using namespace cv;
 
 #define OBSTACLE 9999
 
-#define testing
+//#define testing
 
 bool Astar::createNodeList(Map warehouseLayout, int startPt, int endPt) {
     
@@ -30,11 +57,11 @@ bool Astar::createNodeList(Map warehouseLayout, int startPt, int endPt) {
             }
         }
     }
-
+    #ifdef testing
     for(int i =0; i < index; i++) {
         nodeList[i].output();
     }
-
+    #endif
     if(startPt >= 0 && endPt >= 0 && (unsigned)startPt<nodeList.size() && (unsigned)endPt<nodeList.size()) {
         setStartPoint(startPt);
         setEndPoint(endPt);
@@ -43,8 +70,6 @@ bool Astar::createNodeList(Map warehouseLayout, int startPt, int endPt) {
     else {
         return false;
     }
-
-    
 }
 
 void Astar::setStartPoint(int startIndex) {
@@ -58,42 +83,25 @@ void Astar::setEndPoint(int endIndex) {
 }
 
 int Astar::planPath() {
-    std::cout << "openList: " << openList.size() << std::endl;
     nodeList[startPoint].setHeuristicCost(1);
-    //nodeList[startPoint].setParentNode(8888);
     nodeList[startPoint].setPathCost(0);
     nodeList[startPoint].setTotalCost();
-    double xxxx = nodeList[startPoint].getCost();
-    std::cout<<"startnode cost: "<<xxxx <<std::endl;
-
-    //nodeList[endPoint].setHeuristicCost(10);
-    //nodeList[startPoint].setParentNode(8888);
-    //nodeList[endPoint].setPathCost(1);
-    //nodeList[endPoint].setTotalCost();
-    //double xx = nodeList[endPoint].getCost();
-    //std::cout<<"endnode cost: "<<xx<<std::endl;
 
     for(auto a:nodeList) {
         calcHeuristicCost(a.getIndex(),nodeList[endPoint]);
     }
 
-// dei emplace back (!!!!!!!!!!!!)
     openList.emplace_back(nodeList[startPoint]);
-    //openList.emplace_back(nodeList[endPoint]);
-
-    
-
-    //openList
-   
-for(auto i:openList) {
-    std::cout<<"cost"<<i.getCost()<<std::endl;
-}
-
-    std::cout << "openList: " << openList.size()<<std::endl;
+    #ifdef testing
+    for(auto i:openList) {
+        std::cout<<"cost"<<i.getCost()<<std::endl;
+    }
+    //std::cout << "openList: " << openList.size()<<std::endl;
+    #endif
 
     Map map;
     auto directions = map.returnDirection();
-
+    int finalFoundFlag = 0;
  
     while(!openList.empty()) {
         openList.sort(priority);
@@ -103,11 +111,13 @@ for(auto i:openList) {
         openList.pop_front();
 
         if(currentNode.getIndex() == nodeList[endPoint].getIndex()) {
-            std::cout<<"final found";
+            //std::cout<<"final found";
+            finalFoundFlag = 1;
+            #ifdef testing
             for(auto i:closedList) {
                 std::cout<<"\n Node Index: "<<i.getIndex()<<" hcost: "<<i.returnHCost()<<"  totalcost: "<<i.getCost()<< " Parent: "<<i.getParentIndex();
             }
-            //something to breakout
+            #endif
             break;
         }
 
@@ -151,9 +161,10 @@ for(auto i:openList) {
             nodeList[i].setPathCost(1);
             nodeList[i].setTotalCost();
             openList.push_back(nodeList[i]);
+            #ifdef testing
             std::cout<<"\nThe openlist size is: "<<openList.size();
             std::cout<<"\nThe closedlist size is: "<<closedList.size(); 
-
+            #endif
         }
         
         }
@@ -174,13 +185,19 @@ for(auto i:openList) {
             continue;
         }
     }
-
+    #ifdef testing
     for(auto i:path) {
         std::cout<<"\nPath list: "<<i.getIndex();
     }
-     
-     
-    return (closedList.size()-1);
+    #endif
+    int shortestPathLength = 0;
+    if(finalFoundFlag == 0) {
+        shortestPathLength = -1;
+    }
+    else {
+        shortestPathLength = (closedList.size()-1);
+    }
+    return shortestPathLength;
 }
 
 bool Astar::inOpenList(int id) {
@@ -206,7 +223,7 @@ int Astar::identifyNode(int x, int y) {
     int found=0;
     int index=0;
     for(auto n:nodeList) {
-//std::cout<<"\n row col"<<n.getRowIndex()<<" "<<n.getColumnIndex();
+        //std::cout<<"\n row col"<<n.getRowIndex()<<" "<<n.getColumnIndex();
         if(n.getRowIndex() == x && n.getColumnIndex() == y) {
             found = 1;
             index = n.getIndex();
@@ -245,12 +262,11 @@ void Astar::calcHeuristicCost(int node, Layoutnodes goal) {
     nodeList[node].setHeuristicCost(distance);
 }
 
-void Astar::displayMap() {
+Mat Astar::displayMap() {
     
     int sqW = 50;
     int iSqW = 45;
     int xLength = mapColumn*sqW, yLength = mapRow*sqW+40;
-    Mat drawing;
     drawing = Mat::zeros(Size(xLength,yLength),CV_8UC3);
     for(int i = 0; i < mapRow; i++) {
         for(int j = 0; j < mapColumn; j++) {
@@ -296,8 +312,8 @@ void Astar::displayMap() {
     putText(drawing,"- Path",Point(25,yLength-10), FONT_HERSHEY_SIMPLEX, 0.3,Scalar(255,255,255),1,LINE_AA);
     rectangle(drawing,Point(100,yLength-15), Point(110,yLength-5), Scalar(128,128,128), -1, CV_AA, 0);
     putText(drawing,"- Obstacle",Point(125,yLength-10), FONT_HERSHEY_SIMPLEX, 0.3,Scalar(255,255,255),1,LINE_AA);
-    imshow("Planned Path", drawing);
-    waitKey(0);
+    
+return drawing;
 }
 
 bool priority( Layoutnodes &node1, Layoutnodes &node2) {
