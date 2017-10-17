@@ -3,11 +3,6 @@
 #include <Layoutnodes.hpp>
 #include <memory>
 
-TEST(dummy, should_pass) {
-  EXPECT_EQ(1, 1);
-}
-
-
 TEST(LayoutnodesSetNodeIndexTest, testNodeIndex) {
     std::shared_ptr<Layoutnodes> testNode = std::make_shared<Layoutnodes>();
     testNode->setNodeIndex(11,4,5);
