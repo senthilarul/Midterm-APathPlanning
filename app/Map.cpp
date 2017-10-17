@@ -12,17 +12,16 @@ void Map::displayMap() {
                 std::cout << "x";
             }
         }
-    std::cout << std::endl;
+        std::cout << std::endl;
     }
-
 }
 
 void Map::storeMap(std::vector<int> map) {
     currentMap = map;
 }
 
-void Map::loadMap() {
-    std::ifstream file("/home/viki/triala*/Data/data1.csv");
+void Map::loadMap(std::string mapPath) {
+    std::ifstream file(mapPath);
     std::string row, cell;
     int rowCount = 0;
     if(file.good()) {
@@ -39,6 +38,9 @@ void Map::loadMap() {
             ++rowCount;
             setColumn(columnCount);
         }
+    }
+    else {
+        std::cout<<"The File path entered is not correct";
     }
     setRow(rowCount);
 }

@@ -29,7 +29,11 @@ int main() {
         warehouseMap.displayMap();
     }
     else {
-        warehouseMap.loadMap();
+        std::cout<<"Please Enter the full path of the Map (.csv) file";
+        std::cout<<std::endl;
+        std::string mapPath;
+        std::cin>>mapPath;
+        warehouseMap.loadMap(mapPath);
         warehouseMap.displayMap();
     }
     std::cout<<"Enter Start and End points: "<<std::endl;
@@ -37,11 +41,12 @@ int main() {
     bool success = a.createNodeList(warehouseMap, startPt-1,endPt-1);
     if(success == true) {
         noOfSteps = a.planPath();
-        
+        a.displayMap();
     }
     else {
         std::cout<<"Enter a valid start and end point"<<std::endl;
     }
-    std::cout<<"Number of Steps taken in the shortest path is: "<<noOfSteps;
+    std::cout<<"Number of Steps taken in the shortest path is: ";
+    std::cout<<noOfSteps<<std::endl;
     return 0;
 }
