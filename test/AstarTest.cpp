@@ -9,7 +9,6 @@ std::vector<int> testMapArray {1,1,1,1,0,1,0,
 			       0,0,1,1,1,1,1,
 			       1,1,1,1,1,1,0};
 
-
 TEST(AstarCreateNodeTest1, testCreateNodeForOutOfBoundStartandEndPt) {
     Map testMap;
     testMap.storeMap(testMapArray);
