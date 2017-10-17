@@ -175,8 +175,6 @@ for(auto i:openList) {
         }
     }
 
-    displayMap();
-
     for(auto i:path) {
         std::cout<<"\nPath list: "<<i.getIndex();
     }
