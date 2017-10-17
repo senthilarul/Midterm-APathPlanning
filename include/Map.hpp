@@ -19,7 +19,7 @@ class Map {
  public:
     void displayMap();
     void storeMap(std::vector<int> map);
-    void loadMap();
+    void loadMap(std::string mapPath);
     std::vector<int> getMap();
     void deleteMap();
     int returnColumn();  //auto
