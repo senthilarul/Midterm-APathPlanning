@@ -53,7 +53,7 @@ using cv::Scalar;
 using cv::Point;
 using cv::Size;
 using cv::FONT_HERSHEY_SIMPLEX;
- 
+
 /**
  * @brief Class Astar
  * The following class Astar aids in calculation of the the shortest path

@@ -171,6 +171,7 @@ int Astar::planPath() {
         std::cout << "\nPath list: " << i.getIndex();
     }
     #endif
+    cv::Mat bufferMat = displayMap();
     int shortestPathLength = 0;
     if (finalFoundFlag == 0) {
         shortestPathLength = -1;
