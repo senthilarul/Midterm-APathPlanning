@@ -22,15 +22,15 @@ Features:
 A user a input a warehouse map during run time to run the the path planning calculations. The warehouse map is inputed as a .csv file. The obstacles are represented as a '0' in the cell and the other cells are represented by 1.
 The below image represents the excel file. The excel file is later exported as a .csv file.
 
-<p align="center"><img src="result/inputcsv.png"></p> 
+<p align="center"><img src="Results/inputcsv.png"></p> 
 
 The user then inputs the start and end nodes for calculation.
 
-<p align="center"><img src="result/inputstartendnodes.png"></p>
+<p align="center"><img src="Results/inputstartendnodes.png"></p>
 
 Once the user inputs the start and end nodes the software calculates the shortest path between the two nodes. The below picture shows the visual of the selected path. 
 
-<p align="center"><img src="result/pathvisualization.png"></p>
+<p align="center"><img src="Results/pathvisualization.png"></p>
 
 
 ## License
