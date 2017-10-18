@@ -32,17 +32,19 @@
  *            selected path
  */
 
+#pragma once
+
+#include <stdio.h>
+#include <opencv2/opencv.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/core/core.hpp>
 #include <iostream>
+#include <vector>
 #include <list>
 #include <memory>
 #include "Layoutnodes.hpp"
 #include "Map.hpp"
 
-//opencv
-#include <opencv2/opencv.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/core/core.hpp>
-#include <stdio.h>
 
 using namespace cv;
 
@@ -67,7 +69,6 @@ class Astar {
     Mat drawing;
 
  public:
-
     /**
      * @brief Function SetStartPoint
      * @param startIndex of type int
@@ -160,5 +161,5 @@ class Astar {
      * The following function returns true if a node1 cost is less
      * than node2 cost, else false.
      */
-    bool priority( Layoutnodes &node1, Layoutnodes &node2);
+    bool priority(Layoutnodes &node1, Layoutnodes &node2);
 

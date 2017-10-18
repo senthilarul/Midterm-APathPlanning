@@ -29,17 +29,17 @@
  * @brief     Test cases for class Astar
  */
 
-#include <gtest/gtest.h>
 #include <gmock/gmock.h>
-#include "Astar.hpp"
+#include <gtest/gtest.h>
 #include <memory>
+#include "Astar.hpp"
+#include <vector>
 
 std::shared_ptr<Astar> testAstar = std::make_shared<Astar>();
-std::vector<int> testMapArray {1,1,1,1,0,1,0,
-			       0,0,0,1,1,0,0,
-			       0,0,1,1,1,1,1,
-			       1,1,1,1,1,1,0};
-
+std::vector<int> testMapArray {1, 1, 1, 1, 0, 1, 0,
+                               0, 0, 0, 1, 1, 0, 0,
+                               0, 0, 1, 1, 1, 1, 1,
+                               1, 1, 1, 1, 1, 1, 0};
 /**
  *@brief Case to test for out of bound start and end point
  *@param none
@@ -50,11 +50,11 @@ TEST(AstarCreateNodeTest1, testCreateNodeForOutOfBoundStartandEndPt) {
     testMap.storeMap(testMapArray);
     int startPt = -1;
     int endPt = 111;
-    ASSERT_FALSE(testAstar->createNodeList(testMap,startPt, endPt));
+    ASSERT_FALSE(testAstar->createNodeList(testMap, startPt, endPt));
 }
 
 /**
- *@brief Case to test successful working for inrange 
+ *@brief Case to test successful working for inrange
  *       start and end point
  *@param none
  *@return none
@@ -64,7 +64,7 @@ TEST(AstarCreateNodeTest2, testCreateNodeForInBoundStartandEndPt) {
     testMap.storeMap(testMapArray);
     int startPt = 1;
     int endPt = 11;
-    ASSERT_TRUE(testAstar->createNodeList(testMap,startPt, endPt));
+    ASSERT_TRUE(testAstar->createNodeList(testMap, startPt, endPt));
 }
 
 /**
@@ -73,7 +73,7 @@ TEST(AstarCreateNodeTest2, testCreateNodeForInBoundStartandEndPt) {
  *@return none
  */
 TEST(AstarIdentifyNodeTest1, testIdentfyNodeForObstacleCoOrdinate) {
-    ASSERT_EQ(testAstar->identifyNode(0,4),9999);
+    ASSERT_EQ(testAstar->identifyNode(0, 4), 9999);
 }
 
 /**
@@ -83,7 +83,7 @@ TEST(AstarIdentifyNodeTest1, testIdentfyNodeForObstacleCoOrdinate) {
  *@return none
  */
 TEST(AstarIdentifyNodeTest2, testIdentfyNodeForNodeCoOrdinate) {
-    ASSERT_EQ(testAstar->identifyNode(0,2),2);
+    ASSERT_EQ(testAstar->identifyNode(0, 2), 2);
 }
 
 /**
@@ -95,7 +95,7 @@ TEST(AstarPlanPathTest, testShortestPathForKnownMap) {
     Map testMap;
     testMap.storeMap(testMapArray);
     testAstar->setStartPoint(2);
-    testAstar->setEndPoint(17);  
-    ASSERT_EQ(testAstar->planPath(),6);
+    testAstar->setEndPoint(17);
+    ASSERT_EQ(testAstar->planPath(), 6);
 }
 

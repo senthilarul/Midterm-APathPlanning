@@ -30,7 +30,7 @@
  * @detail    Class to store the path cost, heuristic cost, parent
  *            id for the nodes 
  */
-
+#pragma once
 #include <iostream>
 
 /**
@@ -38,7 +38,7 @@
  * The following class Layoutnodes stores details regarding the nodes
  * of a map. It store data regarding index of the node, its parent,
  * costs, row and column index.
-*/
+ */
 class Layoutnodes {
  private:
     int nodeIndex;
@@ -125,7 +125,7 @@ class Layoutnodes {
      * @return rowIndex of type int
      * The following function returns rowIndex of the node.
      */
-    int getRowIndex(); 
+    int getRowIndex();
     /**
      * @brief Function getColumnIndex
      * @param none

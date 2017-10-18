@@ -34,35 +34,30 @@
 #include "Map.hpp"
 
 std::shared_ptr<Map> testMap = std::make_shared<Map>();
-std::vector<int> testMapArray1 {1,1,1,1,0,0,0,0,
-			        0,0,0,1,1,0,0,0,
-			        0,0,1,1,1,1,1,0,
-			        1,1,1,1,1,1,1,0};
-
+std::vector<int> testMapArray1 {1, 1, 1, 1, 0, 0, 0, 0,
+                                0, 0, 0, 1, 1, 0, 0, 0,
+                                0, 0, 1, 1, 1, 1, 1, 0,
+                                1, 1, 1, 1, 1, 1, 1, 0};
 /**
  *@brief Case to test successful generation of map from
  *       input .csv file
  *@param none
  *@return none
  */
-TEST(MapLoadMapTest1, testLoadMapMethodWithDefaultMap)
-{
+TEST(MapLoadMapTest1, testLoadMapMethodWithDefaultMap) {
     testMap->loadMap("../Data/data1.csv");
     ASSERT_EQ(testMap->returnColumn(), 8);
     ASSERT_EQ(testMap->returnRow(), 4);
     ASSERT_EQ(testMap->getMap(), testMapArray1);
 }
-
 /**
  *@brief Case to test error message for wrong .csv file
  *@param none
  *@return none
  */
-TEST(MapLoadMapTest2, testLoadMapMethodWithWrongMap)
-{
+TEST(MapLoadMapTest2, testLoadMapMethodWithWrongMap) {
     std::shared_ptr<Map> testMap1 = std::make_shared<Map>();
     testMap1->loadMap("unknown.csv");
     ASSERT_EQ(testMap1->returnColumn(), 0);
     ASSERT_EQ(testMap1->returnRow(), 0);
-    
 }

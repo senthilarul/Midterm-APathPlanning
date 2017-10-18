@@ -21,7 +21,6 @@
 *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 *  SOFTWARE.
 *******************************************************************************/
-
 /**
  * @file      Map.hpp
  * @author    Senthil Hariharan Arul
@@ -29,13 +28,13 @@
  * @brief     Map Class declaration
  * @detail    declares functions for loading and storing maps
  */
-
-#include <iostream>
-#include <fstream>
-#include <sstream> //change
-#include <vector>
+#pragma once
 #include <string.h>
-
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
+#include <vector>
 /**
  * @brief Class Map
  * The following class Map aids in storing and retriving the layout
@@ -47,17 +46,17 @@ class Map {
     int totalMap;
     int column = 7;
     int row = 4;
-    int moveDirection[8] = {-1,0,    // top
-                             0,1,    // right
-                             1,0,    // bottom
-                             0,-1};  // left 
+    int moveDirection[8] = {-1, 0,    // top
+                             0, 1,    // right
+                             1, 0,    // bottom
+                             0, -1};  // left
 
  public:
     /**
      * @brief Function displayMap
      * @param none
      * @return none
-     * The following function displays the map 
+     * The following function displays the map
      * from input .csv file.
      */
     void displayMap();

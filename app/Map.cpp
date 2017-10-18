@@ -37,12 +37,11 @@
 void Map::displayMap() {
     std::vector<int> displayLayout = currentMap;
     int node = 1;
-    for(int i = 0; i < row; i++) {
-        for(int j = 0; j < column; j++) {
-            if(displayLayout[i*column + j] == 1) {
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < column; j++) {
+            if (displayLayout[i*column + j] == 1) {
                 std::cout << node++ <<"\t";
-            }
-            else {
+            } else {
                 std::cout << "x" << "\t";
             }
         }
@@ -58,13 +57,13 @@ void Map::loadMap(std::string mapPath) {
     std::ifstream file(mapPath);
     std::string row, cell;
     int rowCount = 0;
-    if(file.good()) {
-        while(std::getline(file,row)) {
+    if (file.good()) {
+        while (std::getline(file, row)) {
             int columnCount = 0;
             std::istringstream linestream(row);
             while (getline(linestream, cell, ',')) {
                 ++columnCount;
-                if(cell == "0")
+                if (cell == "0")
                     currentMap.emplace_back(0);
                 else
                     currentMap.emplace_back(1);
@@ -72,9 +71,8 @@ void Map::loadMap(std::string mapPath) {
             ++rowCount;
             setColumn(columnCount);
         }
-    }
-    else {
-        std::cout<<"The File path entered is not correct";
+    } else {
+        std::cout << "The File path entered is not correct";
         setColumn(0);
         setRow(0);
     }
@@ -100,10 +98,6 @@ void Map::setColumn(int colCount) {
 void Map::setRow(int rowCount) {
     row = rowCount;
 }
-
-//std::vector<int> Map::returnMap() {
-  //  return currentMap;
-//}
 
 int* Map::returnDirection() {
     return moveDirection;
