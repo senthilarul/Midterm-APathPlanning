@@ -4,13 +4,64 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ---
 
-## Overview
+## Overview - A C++ implemntation for A* Path Planning algorithm
 
-A C++ implemntation for A* Path Planning algorithm. (More information would be updated soon)
+Warehouse robots are one among the many uses on which robotics has been implemented. With the aquisition of Kiva robotics by Amazon, the potential in such warehouse logisitics systems is evident. 
+The github repository contains path planning software developed using C++ for ACME Robotics (ENPM808X Midterm project). 
+
+A* Path planning algorithm is very effective for known environment. In this project I am approximating the warehouse robot to operate in such an environment. 
+
+The algorithm is similar to Djikstra's algorithm except for the fact that the total cost is a combination of cost/distance of the current node to the start node (Path cost) and current node to the goal node (heuristic cost). In this implementation I am assuming the robot can travel only in 4 directions, namely North, East, South and West. The path cost of traveling to an adjacent node in the above mentioned direction is set to 1. The Heuristic cost is calculated by the straight line distance between the current node and the goal node. 
+
+The total cost is calculated as a combination of path cost + 0.1 * heusristic cost.
+
+A weight of 0.1 is multiplied to the heuristic cost to prevent this cost from over powering the total cost (it the becomes similar to greedy best search).
+
+Features:
+
+A user a input a warehouse map during run time to run the the path planning calculations. The warehouse map is inputed as a .csv file. The obstacles are represented as a '0' in the cell and the other cells are represented by 1.
+The below image represents the excel file. The excel file is later exported as a .csv file.
+
+<p align="center"><img src="result/inputcsv.png"></p> 
+
+The user then inputs the start and end nodes for calculation.
+
+<p align="center"><img src="result/inputstartendnodes.png"></p>
+
+Once the user inputs the start and end nodes the software calculates the shortest path between the two nodes. The below picture shows the visual of the selected path. 
+
+<p align="center"><img src="result/pathvisualization.png"></p>
+
+
+## License
+```
+MIT License
+
+Copyright (c) 2017 Senthil Hariharan Arul
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
 
 ## Product Backlog and Sprint Schedule
 
 Please vist the link at:
+
 https://docs.google.com/a/terpmail.umd.edu/spreadsheets/d/12z8tL9RKelgzJ8GJdyQ-GIjZYogpATpe3jIa_0ffNng/edit?usp=sharing
 
 ## Standard install via command-line
@@ -127,3 +178,16 @@ perspetive view (or Windows->Perspective->Open Perspective->C/C++).
 - Git
 
     It is possible to manage version control through Eclipse and the git plugin, but it typically requires creating another project. If you're interested in this, try it out yourself and contact me on Canvas.
+
+## Doxygen 
+
+To install Doxygen
+
+```
+sudo apt install doxygen
+```
+
+once the installation is over we can generate the Doxygen documentation by running
+```
+doxygen ./Doxygen
+```
