@@ -32,6 +32,7 @@
 #include <memory>
 #include <list>
 #include <vector>
+#include <string>
 #include "Astar.hpp"
 
 #define debug
@@ -47,7 +48,6 @@ int main() {
     #endif
     int startPt, endPt;
     int userChoice;
-    int noOfSteps;
     // menu
     std::cout << "Astar Path Planning using C++" << std::endl;
     std::cout << "Choose which map to use: " << std::endl;
@@ -73,6 +73,7 @@ int main() {
     std::cin >> startPt >> endPt;
     bool success = a.createNodeList(warehouseMap, startPt-1, endPt-1);
     if (success == true) {
+        int noOfSteps;
         noOfSteps = a.planPath();
         if (noOfSteps == 0) {
             std::cout << "Start and End Point are same" << std::endl;

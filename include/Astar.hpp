@@ -70,6 +70,19 @@ class Astar {
 
  public:
     /**
+     * @brief constructor Astar
+     * @param none
+     * @return none
+     * initializes values of startPoint, endPoint, mapColumn
+     * and mapRow. 
+     */
+    Astar() {
+    startPoint = 0;
+    endPoint = 0;
+    mapColumn = 0;
+    mapRow = 0;
+    }
+    /**
      * @brief Function SetStartPoint
      * @param startIndex of type int
      * @return none
@@ -152,6 +165,12 @@ class Astar {
      * is in the closeList, else returns false.
      */
     Mat displayMap();
+    /**
+     * @brief destructor Astar
+     * @param none
+     * @return none 
+     */
+    ~Astar() {}
 };
    /**
      * @brief Function priority

@@ -31,6 +31,7 @@
 
 #include <gtest/gtest.h>
 #include <memory>
+#include <vector>
 #include "Map.hpp"
 
 std::shared_ptr<Map> testMap = std::make_shared<Map>();

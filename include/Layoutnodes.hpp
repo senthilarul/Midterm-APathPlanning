@@ -51,6 +51,21 @@ class Layoutnodes {
 
  public:
     /**
+     * @brief constructor Layoutnodes
+     * @param none
+     * @return none
+     * initializes private variables.
+     */
+     Layoutnodes() {
+         nodeIndex = 999;
+         parentIndex = 9999;
+         rowIndex = 0;
+         columnIndex = 0;
+         heuristicCost = 0;
+         pathCost = 0;
+         totalCost = 0;
+     }
+    /**
      * @brief Function setNodeIndex
      * @param index of type int
      * @param column of type int
@@ -148,4 +163,10 @@ class Layoutnodes {
      * of the node.
      */
     double returnHCost();
+    /**
+     * @brief destructor Layoutnodes
+     * @param none
+     * @return none
+     */
+    ~Layoutnodes() {}
 };

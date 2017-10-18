@@ -34,6 +34,7 @@
 #include <math.h>
 #include <typeinfo>
 #include <vector>
+#include <list>
 #include "Astar.hpp"
 
 #define OBSTACLE 9999
@@ -225,9 +226,6 @@ bool Astar::inClosedList(int id) {
         return false;
 }
 
-void Astar::calcPathCost(int id) {
-    nodeList[id].setPathCost(1);
-}
 
 void Astar::calcHeuristicCost(int node, Layoutnodes goal) {
     int x1 = nodeList[node].getColumnIndex();

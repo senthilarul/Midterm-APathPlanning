@@ -43,7 +43,6 @@
 class Map {
  private:
     std::vector<int> currentMap;
-    int totalMap;
     int column = 7;
     int row = 4;
     int moveDirection[8] = {-1, 0,    // top
@@ -52,6 +51,12 @@ class Map {
                              0, -1};  // left
 
  public:
+    /**
+     * @brief constructor for Map
+     * @param none
+     * @return none
+     */
+    Map() {}
     /**
      * @brief Function displayMap
      * @param none
@@ -127,4 +132,10 @@ class Map {
      * (4 in this case north, east, south and west).
      */
     int* returnDirection();
+    /**
+     * @brief destructor Map
+     * @param none
+     * @return none
+     */
+    ~Map() {}
 };

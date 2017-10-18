@@ -30,7 +30,8 @@
  * @detail    Converts input .csv file to vector of int, returns
  *            number of column and rows 
  */
-
+#include <vector>
+#include <string>
 #include "Map.hpp"
 
 

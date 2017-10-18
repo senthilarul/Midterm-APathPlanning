@@ -32,8 +32,9 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 #include <memory>
-#include "Astar.hpp"
 #include <vector>
+#include "Astar.hpp"
+
 
 std::shared_ptr<Astar> testAstar = std::make_shared<Astar>();
 std::vector<int> testMapArray {1, 1, 1, 1, 0, 1, 0,
