@@ -1,7 +1,6 @@
 Done processing ./include/Layoutnodes.hpp
-./include/Astar.hpp:49:  Do not use namespace using-directives.  Use using-declarations instead.  [build/namespaces] [5]
-./include/Astar.hpp:183:  Is this a non-const reference? If so, make const or use a pointer: Layoutnodes &node1  [runtime/references] [2]
-./include/Astar.hpp:183:  Is this a non-const reference? If so, make const or use a pointer: Layoutnodes &node2  [runtime/references] [2]
+./include/Astar.hpp:189:  Is this a non-const reference? If so, make const or use a pointer: Layoutnodes &node1  [runtime/references] [2]
+./include/Astar.hpp:189:  Is this a non-const reference? If so, make const or use a pointer: Layoutnodes &node2  [runtime/references] [2]
 Done processing ./include/Astar.hpp
 Done processing ./include/Map.hpp
 Done processing ./test/main.cpp
@@ -12,14 +11,13 @@ Done processing ./app/main.cpp
 ./app/Astar.cpp:62:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
 ./app/Astar.cpp:105:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
 ./app/Astar.cpp:113:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-./app/Astar.cpp:264:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-./app/Astar.cpp:266:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-./app/Astar.cpp:268:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-./app/Astar.cpp:270:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-./app/Astar.cpp:272:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+./app/Astar.cpp:265:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+./app/Astar.cpp:267:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+./app/Astar.cpp:269:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+./app/Astar.cpp:271:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
 ./app/Astar.cpp:273:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-./app/Astar.cpp:275:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-./app/Astar.cpp:279:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+./app/Astar.cpp:274:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+./app/Astar.cpp:276:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
 ./app/Astar.cpp:280:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
 ./app/Astar.cpp:281:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
 ./app/Astar.cpp:282:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
@@ -27,10 +25,11 @@ Done processing ./app/main.cpp
 ./app/Astar.cpp:284:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
 ./app/Astar.cpp:285:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
 ./app/Astar.cpp:286:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-./app/Astar.cpp:290:  Is this a non-const reference? If so, make const or use a pointer: Layoutnodes &node1  [runtime/references] [2]
-./app/Astar.cpp:290:  Is this a non-const reference? If so, make const or use a pointer: Layoutnodes &node2  [runtime/references] [2]
+./app/Astar.cpp:287:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+./app/Astar.cpp:291:  Is this a non-const reference? If so, make const or use a pointer: Layoutnodes &node1  [runtime/references] [2]
+./app/Astar.cpp:291:  Is this a non-const reference? If so, make const or use a pointer: Layoutnodes &node2  [runtime/references] [2]
 Done processing ./app/Astar.cpp
 Done processing ./app/Layoutnodes.cpp
 Done processing ./app/Map.cpp
-Total errors found: 23
+Total errors found: 22
 
