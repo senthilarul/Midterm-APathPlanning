@@ -77,17 +77,17 @@ int main() {
         noOfSteps = a.planPath();
         if (noOfSteps == 0) {
             std::cout << "Start and End Point are same" << std::endl;
-            Mat pathDrawing = a.displayMap();
-            imshow("Planned Path", pathDrawing);
-            waitKey(0);
+            cv::Mat pathDrawing = a.displayMap();
+            cv::imshow("Planned Path", pathDrawing);
+            cv::waitKey(0);
         } else if (noOfSteps == -1) {
             std::cout << "The no possible path between the two points";
         } else {
             std::cout << "Number of Steps taken in the shortest path is: ";
             std::cout << noOfSteps << std::endl;
-            Mat pathDrawing = a.displayMap();
-            imshow("Planned Path", pathDrawing);
-            waitKey(0);
+            cv::Mat pathDrawing = a.displayMap();
+            cv::imshow("Planned Path", pathDrawing);
+            cv::waitKey(0);
         }
     } else {
         std::cout << "Enter a valid start and end point" << std::endl;

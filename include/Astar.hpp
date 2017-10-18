@@ -46,8 +46,14 @@
 #include "Map.hpp"
 
 
-using namespace cv;
-
+using cv::Mat;
+using cv::imshow;
+using cv::waitKey;
+using cv::Scalar;
+using cv::Point;
+using cv::Size;
+using cv::FONT_HERSHEY_SIMPLEX;
+ 
 /**
  * @brief Class Astar
  * The following class Astar aids in calculation of the the shortest path
@@ -66,7 +72,7 @@ class Astar {
     std::vector<Layoutnodes> nodeList;
     std::vector<double> neighbourNodes;
     std::list<Layoutnodes> path;
-    Mat drawing;
+    cv::Mat drawing;
 
  public:
     /**
@@ -164,7 +170,7 @@ class Astar {
      * The following function returns true if a node of the given
      * is in the closeList, else returns false.
      */
-    Mat displayMap();
+    cv::Mat displayMap();
     /**
      * @brief destructor Astar
      * @param none

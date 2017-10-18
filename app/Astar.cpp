@@ -236,7 +236,7 @@ void Astar::calcHeuristicCost(int node, Layoutnodes goal) {
     nodeList[node].setHeuristicCost(distance);
 }
 
-Mat Astar::displayMap() {
+cv::Mat Astar::displayMap() {
     int sqW = 50;
     int iSqW = 45;
     int xLength = mapColumn*sqW, yLength = mapRow*sqW+40;
