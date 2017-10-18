@@ -1,0 +1,113 @@
+\hypertarget{MapTest_8cpp}{}\section{test/\+Map\+Test.cpp File Reference}
+\label{MapTest_8cpp}\index{test/\+Map\+Test.\+cpp@{test/\+Map\+Test.\+cpp}}
+
+
+Test Cases for Class \hyperlink{classMap}{Map}.  
+
+
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\\*
+{\ttfamily \#include $<$memory$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}Map.\+hpp\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{MapTest_8cpp_adb7bbc3244580c0cf1fc1c0688ba438f}{T\+E\+ST} (Map\+Load\+Map\+Test1, test\+Load\+Map\+Method\+With\+Default\+Map)
+\begin{DoxyCompactList}\small\item\em Case to test successful generation of map from input .csv file. \end{DoxyCompactList}\item 
+\hyperlink{MapTest_8cpp_a61f99bc063892433aa008f22229d3a06}{T\+E\+ST} (Map\+Load\+Map\+Test2, test\+Load\+Map\+Method\+With\+Wrong\+Map)
+\begin{DoxyCompactList}\small\item\em Case to test error message for wrong .csv file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classMap}{Map} $>$ \hyperlink{MapTest_8cpp_ab500cee64ce2f75d5f7a0da0fd7fad81}{test\+Map} = std\+::make\+\_\+shared$<$\hyperlink{classMap}{Map}$>$()
+\item 
+std\+::vector$<$ int $>$ \hyperlink{MapTest_8cpp_a6b98c212fe6417ef180d830e758c710d}{test\+Map\+Array1}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Test Cases for Class \hyperlink{classMap}{Map}. 
+
+\begin{DoxyAuthor}{Author}
+Senthil Hariharan Arul 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+M\+IT License 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\index{Map\+Test.\+cpp@{Map\+Test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!Map\+Test.\+cpp@{Map\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Map\+Load\+Map\+Test1, test\+Load\+Map\+Method\+With\+Default\+Map)}{TEST(MapLoadMapTest1, testLoadMapMethodWithDefaultMap)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{Map\+Load\+Map\+Test1}]{, }
+\item[{test\+Load\+Map\+Method\+With\+Default\+Map}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{MapTest_8cpp_adb7bbc3244580c0cf1fc1c0688ba438f}{}\label{MapTest_8cpp_adb7bbc3244580c0cf1fc1c0688ba438f}
+
+
+Case to test successful generation of map from input .csv file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+48                                                        \{
+49     \hyperlink{MapTest_8cpp_ab500cee64ce2f75d5f7a0da0fd7fad81}{testMap}->loadMap(\textcolor{stringliteral}{"../Data/data1.csv"});
+50     ASSERT\_EQ(\hyperlink{MapTest_8cpp_ab500cee64ce2f75d5f7a0da0fd7fad81}{testMap}->returnColumn(), 8);
+51     ASSERT\_EQ(\hyperlink{MapTest_8cpp_ab500cee64ce2f75d5f7a0da0fd7fad81}{testMap}->returnRow(), 4);
+52     ASSERT\_EQ(\hyperlink{MapTest_8cpp_ab500cee64ce2f75d5f7a0da0fd7fad81}{testMap}->getMap(), \hyperlink{MapTest_8cpp_a6b98c212fe6417ef180d830e758c710d}{testMapArray1});
+53 \}
+\end{DoxyCode}
+\index{Map\+Test.\+cpp@{Map\+Test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!Map\+Test.\+cpp@{Map\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Map\+Load\+Map\+Test2, test\+Load\+Map\+Method\+With\+Wrong\+Map)}{TEST(MapLoadMapTest2, testLoadMapMethodWithWrongMap)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{Map\+Load\+Map\+Test2}]{, }
+\item[{test\+Load\+Map\+Method\+With\+Wrong\+Map}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{MapTest_8cpp_a61f99bc063892433aa008f22229d3a06}{}\label{MapTest_8cpp_a61f99bc063892433aa008f22229d3a06}
+
+
+Case to test error message for wrong .csv file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+59                                                      \{
+60     std::shared\_ptr<Map> testMap1 = std::make\_shared<Map>();
+61     testMap1->loadMap(\textcolor{stringliteral}{"unknown.csv"});
+62     ASSERT\_EQ(testMap1->returnColumn(), 0);
+63     ASSERT\_EQ(testMap1->returnRow(), 0);
+64 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\index{Map\+Test.\+cpp@{Map\+Test.\+cpp}!test\+Map@{test\+Map}}
+\index{test\+Map@{test\+Map}!Map\+Test.\+cpp@{Map\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{test\+Map}{testMap}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<${\bf Map}$>$ test\+Map = std\+::make\+\_\+shared$<${\bf Map}$>$()}\hypertarget{MapTest_8cpp_ab500cee64ce2f75d5f7a0da0fd7fad81}{}\label{MapTest_8cpp_ab500cee64ce2f75d5f7a0da0fd7fad81}
+\index{Map\+Test.\+cpp@{Map\+Test.\+cpp}!test\+Map\+Array1@{test\+Map\+Array1}}
+\index{test\+Map\+Array1@{test\+Map\+Array1}!Map\+Test.\+cpp@{Map\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{test\+Map\+Array1}{testMapArray1}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$int$>$ test\+Map\+Array1}\hypertarget{MapTest_8cpp_a6b98c212fe6417ef180d830e758c710d}{}\label{MapTest_8cpp_a6b98c212fe6417ef180d830e758c710d}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{1, 1, 1, 1, 0, 0, 0, 0,
+                                0, 0, 0, 1, 1, 0, 0, 0,
+                                0, 0, 1, 1, 1, 1, 1, 0,
+                                1, 1, 1, 1, 1, 1, 1, 0\}
+\end{DoxyCode}

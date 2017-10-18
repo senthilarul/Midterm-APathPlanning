@@ -1,0 +1,123 @@
+\hypertarget{LayoutnodesTest_8cpp}{}\section{test/\+Layoutnodes\+Test.cpp File Reference}
+\label{LayoutnodesTest_8cpp}\index{test/\+Layoutnodes\+Test.\+cpp@{test/\+Layoutnodes\+Test.\+cpp}}
+
+
+Test cases for Class \hyperlink{classLayoutnodes}{Layoutnodes}.  
+
+
+{\ttfamily \#include $<$gmock/gmock.\+h$>$}\\*
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\\*
+{\ttfamily \#include $<$Layoutnodes.\+hpp$>$}\\*
+{\ttfamily \#include $<$memory$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{LayoutnodesTest_8cpp_a25fc5aedda917ca26ce7e57126c4a804}{T\+E\+ST} (Layoutnodes\+Set\+Node\+Index\+Test, test\+Node\+Index)
+\begin{DoxyCompactList}\small\item\em Case to test successful input of \hyperlink{classLayoutnodes}{Layoutnodes} parameters. \end{DoxyCompactList}\item 
+\hyperlink{LayoutnodesTest_8cpp_ac628e07201ce87c28933f1e477db6d78}{T\+E\+ST} (Layoutnodes\+Set\+Parent, test\+Parent\+Index)
+\begin{DoxyCompactList}\small\item\em Case to test successful parent index entry. \end{DoxyCompactList}\item 
+\hyperlink{LayoutnodesTest_8cpp_ae038e40ac9e9e57e91bbdda0e2654a39}{T\+E\+ST} (Layoutnodes\+Set\+Cost, test\+Cost)
+\begin{DoxyCompactList}\small\item\em Case to test successful input of cost values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Test cases for Class \hyperlink{classLayoutnodes}{Layoutnodes}. 
+
+\begin{DoxyAuthor}{Author}
+Senthil Hariharan Arul 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+M\+IT License 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\index{Layoutnodes\+Test.\+cpp@{Layoutnodes\+Test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!Layoutnodes\+Test.\+cpp@{Layoutnodes\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Layoutnodes\+Set\+Node\+Index\+Test, test\+Node\+Index)}{TEST(LayoutnodesSetNodeIndexTest, testNodeIndex)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{Layoutnodes\+Set\+Node\+Index\+Test}]{, }
+\item[{test\+Node\+Index}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{LayoutnodesTest_8cpp_a25fc5aedda917ca26ce7e57126c4a804}{}\label{LayoutnodesTest_8cpp_a25fc5aedda917ca26ce7e57126c4a804}
+
+
+Case to test successful input of \hyperlink{classLayoutnodes}{Layoutnodes} parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+43                                                  \{
+44     std::shared\_ptr<Layoutnodes> testNode = std::make\_shared<Layoutnodes>();
+45     testNode->setNodeIndex(11, 4, 5);
+46     ASSERT\_FLOAT\_EQ(testNode->getIndex(), 11);
+47     ASSERT\_FLOAT\_EQ(testNode->getColumnIndex(), 4);
+48     ASSERT\_FLOAT\_EQ(testNode->getRowIndex(), 5);
+49 \}
+\end{DoxyCode}
+\index{Layoutnodes\+Test.\+cpp@{Layoutnodes\+Test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!Layoutnodes\+Test.\+cpp@{Layoutnodes\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Layoutnodes\+Set\+Parent, test\+Parent\+Index)}{TEST(LayoutnodesSetParent, testParentIndex)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{Layoutnodes\+Set\+Parent}]{, }
+\item[{test\+Parent\+Index}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{LayoutnodesTest_8cpp_ac628e07201ce87c28933f1e477db6d78}{}\label{LayoutnodesTest_8cpp_ac628e07201ce87c28933f1e477db6d78}
+
+
+Case to test successful parent index entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+56                                             \{
+57     std::shared\_ptr<Layoutnodes> testNode = std::make\_shared<Layoutnodes>();
+58     testNode->setParentIndex(1);
+59     ASSERT\_FLOAT\_EQ(testNode->getParentIndex(), 1);
+60 \}
+\end{DoxyCode}
+\index{Layoutnodes\+Test.\+cpp@{Layoutnodes\+Test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!Layoutnodes\+Test.\+cpp@{Layoutnodes\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Layoutnodes\+Set\+Cost, test\+Cost)}{TEST(LayoutnodesSetCost, testCost)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{Layoutnodes\+Set\+Cost}]{, }
+\item[{test\+Cost}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{LayoutnodesTest_8cpp_ae038e40ac9e9e57e91bbdda0e2654a39}{}\label{LayoutnodesTest_8cpp_ae038e40ac9e9e57e91bbdda0e2654a39}
+
+
+Case to test successful input of cost values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+67                                    \{
+68     std::shared\_ptr<Layoutnodes> testNode = std::make\_shared<Layoutnodes>();
+69     testNode->setHeuristicCost(1.3);
+70     testNode->setPathCost(1.5);
+71     testNode->setTotalCost();
+72     ASSERT\_FLOAT\_EQ(testNode->getCost(), 1.63);
+73 \}
+\end{DoxyCode}

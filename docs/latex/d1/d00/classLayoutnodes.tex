@@ -1,0 +1,446 @@
+\hypertarget{classLayoutnodes}{}\section{Layoutnodes Class Reference}
+\label{classLayoutnodes}\index{Layoutnodes@{Layoutnodes}}
+
+
+Class \hyperlink{classLayoutnodes}{Layoutnodes} The following class \hyperlink{classLayoutnodes}{Layoutnodes} stores details regarding the nodes of a map. It store data regarding index of the node, its parent, costs, row and column index.  
+
+
+
+
+{\ttfamily \#include $<$Layoutnodes.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLayoutnodes_a77ae660cfa6aa7b8314fa4ebc53686a9}{Layoutnodes} ()
+\begin{DoxyCompactList}\small\item\em constructor \hyperlink{classLayoutnodes}{Layoutnodes} \end{DoxyCompactList}\item 
+void \hyperlink{classLayoutnodes_a2aca15040dc4c9928a10b436bd49ddb4}{set\+Node\+Index} (int index, int column, int row)
+\begin{DoxyCompactList}\small\item\em Function set\+Node\+Index. \end{DoxyCompactList}\item 
+void \hyperlink{classLayoutnodes_a5b34895306f7ed2780fed6e0d9518a26}{set\+Parent\+Index} (int p\+Index)
+\begin{DoxyCompactList}\small\item\em Function set\+Parent\+Index. \end{DoxyCompactList}\item 
+int \hyperlink{classLayoutnodes_aaa5c16494f4240da90d169db0596c0b3}{get\+Parent\+Index} ()
+\begin{DoxyCompactList}\small\item\em Function get\+Parent\+Index. \end{DoxyCompactList}\item 
+void \hyperlink{classLayoutnodes_ab1c3b3cc9cd63a3f9356d6f74c91e65d}{set\+Heuristic\+Cost} (double heuristic)
+\begin{DoxyCompactList}\small\item\em Function set\+Heuristic\+Cost. \end{DoxyCompactList}\item 
+void \hyperlink{classLayoutnodes_a2b95c4f7effe08dd465aa190677a1aca}{set\+Path\+Cost} (double cost)
+\begin{DoxyCompactList}\small\item\em Function set\+Path\+Cost. \end{DoxyCompactList}\item 
+void \hyperlink{classLayoutnodes_a2a42eef7c888ecac08027e4c6d7e4ee2}{set\+Total\+Cost} ()
+\begin{DoxyCompactList}\small\item\em Function set\+Total\+Cost. \end{DoxyCompactList}\item 
+void \hyperlink{classLayoutnodes_a9f37ce69889f98468afcfb3057457e44}{set\+Cost} (double cost)
+\begin{DoxyCompactList}\small\item\em Function set\+Cost. \end{DoxyCompactList}\item 
+void \hyperlink{classLayoutnodes_ac5c165f080d4c19de5779bac61080334}{output} ()
+\begin{DoxyCompactList}\small\item\em Function output. \end{DoxyCompactList}\item 
+double \hyperlink{classLayoutnodes_a6671cc8978fcb726aa1c842fecb1b97d}{get\+Cost} ()
+\begin{DoxyCompactList}\small\item\em Function get\+Cost. \end{DoxyCompactList}\item 
+int \hyperlink{classLayoutnodes_a4032ebcb6fb8af88214ec35e6598cfce}{get\+Row\+Index} ()
+\begin{DoxyCompactList}\small\item\em Function get\+Row\+Index. \end{DoxyCompactList}\item 
+int \hyperlink{classLayoutnodes_a290cfb6a96b0beb9e764442f2c79a535}{get\+Column\+Index} ()
+\begin{DoxyCompactList}\small\item\em Function get\+Column\+Index. \end{DoxyCompactList}\item 
+int \hyperlink{classLayoutnodes_ae9d58b708008c5ba3ca9cfa8d5340c25}{get\+Index} ()
+\begin{DoxyCompactList}\small\item\em Function get\+Index. \end{DoxyCompactList}\item 
+double \hyperlink{classLayoutnodes_ae4086c7670079e596f9cb5270f80c3b5}{return\+H\+Cost} ()
+\begin{DoxyCompactList}\small\item\em Function return\+H\+Cost. \end{DoxyCompactList}\item 
+\hyperlink{classLayoutnodes_a559826cd3519fe629734fb5d3323f956}{$\sim$\+Layoutnodes} ()
+\begin{DoxyCompactList}\small\item\em destructor \hyperlink{classLayoutnodes}{Layoutnodes} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{classLayoutnodes}{Layoutnodes} The following class \hyperlink{classLayoutnodes}{Layoutnodes} stores details regarding the nodes of a map. It store data regarding index of the node, its parent, costs, row and column index. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Layoutnodes@{Layoutnodes}!Layoutnodes@{Layoutnodes}}
+\index{Layoutnodes@{Layoutnodes}!Layoutnodes@{Layoutnodes}}
+\subsubsection[{\texorpdfstring{Layoutnodes()}{Layoutnodes()}}]{\setlength{\rightskip}{0pt plus 5cm}Layoutnodes\+::\+Layoutnodes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classLayoutnodes_a77ae660cfa6aa7b8314fa4ebc53686a9}{}\label{classLayoutnodes_a77ae660cfa6aa7b8314fa4ebc53686a9}
+
+
+constructor \hyperlink{classLayoutnodes}{Layoutnodes} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none initializes private variables. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+59                    \{
+60          nodeIndex = 999;
+61          parentIndex = 9999;
+62          rowIndex = 0;
+63          columnIndex = 0;
+64          heuristicCost = 0;
+65          pathCost = 0;
+66          totalCost = 0;
+67      \}
+\end{DoxyCode}
+\index{Layoutnodes@{Layoutnodes}!````~Layoutnodes@{$\sim$\+Layoutnodes}}
+\index{````~Layoutnodes@{$\sim$\+Layoutnodes}!Layoutnodes@{Layoutnodes}}
+\subsubsection[{\texorpdfstring{$\sim$\+Layoutnodes()}{~Layoutnodes()}}]{\setlength{\rightskip}{0pt plus 5cm}Layoutnodes\+::$\sim$\+Layoutnodes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classLayoutnodes_a559826cd3519fe629734fb5d3323f956}{}\label{classLayoutnodes_a559826cd3519fe629734fb5d3323f956}
+
+
+destructor \hyperlink{classLayoutnodes}{Layoutnodes} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+171 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Layoutnodes@{Layoutnodes}!get\+Column\+Index@{get\+Column\+Index}}
+\index{get\+Column\+Index@{get\+Column\+Index}!Layoutnodes@{Layoutnodes}}
+\subsubsection[{\texorpdfstring{get\+Column\+Index()}{getColumnIndex()}}]{\setlength{\rightskip}{0pt plus 5cm}int Layoutnodes\+::get\+Column\+Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classLayoutnodes_a290cfb6a96b0beb9e764442f2c79a535}{}\label{classLayoutnodes_a290cfb6a96b0beb9e764442f2c79a535}
+
+
+Function get\+Column\+Index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+column\+Index of type int Returns column index of the node. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+76                                 \{
+77     \textcolor{keywordflow}{return} columnIndex;
+78 \}
+\end{DoxyCode}
+\index{Layoutnodes@{Layoutnodes}!get\+Cost@{get\+Cost}}
+\index{get\+Cost@{get\+Cost}!Layoutnodes@{Layoutnodes}}
+\subsubsection[{\texorpdfstring{get\+Cost()}{getCost()}}]{\setlength{\rightskip}{0pt plus 5cm}double Layoutnodes\+::get\+Cost (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classLayoutnodes_a6671cc8978fcb726aa1c842fecb1b97d}{}\label{classLayoutnodes_a6671cc8978fcb726aa1c842fecb1b97d}
+
+
+Function get\+Cost. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+total\+Cost of type double The following function returns the total\+Cost of the node 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+68                             \{
+69     \textcolor{keywordflow}{return} totalCost;
+70 \}
+\end{DoxyCode}
+\index{Layoutnodes@{Layoutnodes}!get\+Index@{get\+Index}}
+\index{get\+Index@{get\+Index}!Layoutnodes@{Layoutnodes}}
+\subsubsection[{\texorpdfstring{get\+Index()}{getIndex()}}]{\setlength{\rightskip}{0pt plus 5cm}int Layoutnodes\+::get\+Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classLayoutnodes_ae9d58b708008c5ba3ca9cfa8d5340c25}{}\label{classLayoutnodes_ae9d58b708008c5ba3ca9cfa8d5340c25}
+
+
+Function get\+Index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+node\+Index of type int The following function returns the node index 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+80                           \{
+81     \textcolor{keywordflow}{return} nodeIndex;
+82 \}
+\end{DoxyCode}
+\index{Layoutnodes@{Layoutnodes}!get\+Parent\+Index@{get\+Parent\+Index}}
+\index{get\+Parent\+Index@{get\+Parent\+Index}!Layoutnodes@{Layoutnodes}}
+\subsubsection[{\texorpdfstring{get\+Parent\+Index()}{getParentIndex()}}]{\setlength{\rightskip}{0pt plus 5cm}int Layoutnodes\+::get\+Parent\+Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classLayoutnodes_aaa5c16494f4240da90d169db0596c0b3}{}\label{classLayoutnodes_aaa5c16494f4240da90d169db0596c0b3}
+
+
+Function get\+Parent\+Index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+parent\+Index of type int Returns the the parent index of the node. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+44                                 \{
+45     \textcolor{keywordflow}{return} parentIndex;
+46 \}
+\end{DoxyCode}
+\index{Layoutnodes@{Layoutnodes}!get\+Row\+Index@{get\+Row\+Index}}
+\index{get\+Row\+Index@{get\+Row\+Index}!Layoutnodes@{Layoutnodes}}
+\subsubsection[{\texorpdfstring{get\+Row\+Index()}{getRowIndex()}}]{\setlength{\rightskip}{0pt plus 5cm}int Layoutnodes\+::get\+Row\+Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classLayoutnodes_a4032ebcb6fb8af88214ec35e6598cfce}{}\label{classLayoutnodes_a4032ebcb6fb8af88214ec35e6598cfce}
+
+
+Function get\+Row\+Index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+row\+Index of type int The following function returns row\+Index of the node. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+72                              \{
+73     \textcolor{keywordflow}{return} rowIndex;
+74 \}
+\end{DoxyCode}
+\index{Layoutnodes@{Layoutnodes}!output@{output}}
+\index{output@{output}!Layoutnodes@{Layoutnodes}}
+\subsubsection[{\texorpdfstring{output()}{output()}}]{\setlength{\rightskip}{0pt plus 5cm}void Layoutnodes\+::output (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classLayoutnodes_ac5c165f080d4c19de5779bac61080334}{}\label{classLayoutnodes_ac5c165f080d4c19de5779bac61080334}
+
+
+Function output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none Prints row and colum index (used in testing). 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+64                          \{
+65     std::cout << rowIndex << \textcolor{stringliteral}{" "} << columnIndex << std::endl;
+66 \}
+\end{DoxyCode}
+\index{Layoutnodes@{Layoutnodes}!return\+H\+Cost@{return\+H\+Cost}}
+\index{return\+H\+Cost@{return\+H\+Cost}!Layoutnodes@{Layoutnodes}}
+\subsubsection[{\texorpdfstring{return\+H\+Cost()}{returnHCost()}}]{\setlength{\rightskip}{0pt plus 5cm}double Layoutnodes\+::return\+H\+Cost (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classLayoutnodes_ae4086c7670079e596f9cb5270f80c3b5}{}\label{classLayoutnodes_ae4086c7670079e596f9cb5270f80c3b5}
+
+
+Function return\+H\+Cost. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+heursitic\+Cost of type double The following function returns the hueristic cost of the node. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+84                                 \{
+85     \textcolor{keywordflow}{return} heuristicCost;
+86 \}
+\end{DoxyCode}
+\index{Layoutnodes@{Layoutnodes}!set\+Cost@{set\+Cost}}
+\index{set\+Cost@{set\+Cost}!Layoutnodes@{Layoutnodes}}
+\subsubsection[{\texorpdfstring{set\+Cost(double cost)}{setCost(double cost)}}]{\setlength{\rightskip}{0pt plus 5cm}void Layoutnodes\+::set\+Cost (
+\begin{DoxyParamCaption}
+\item[{double}]{cost}
+\end{DoxyParamCaption}
+)}\hypertarget{classLayoutnodes_a9f37ce69889f98468afcfb3057457e44}{}\label{classLayoutnodes_a9f37ce69889f98468afcfb3057457e44}
+
+
+Function set\+Cost. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cost} & of type double \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none The following function sets the totalcost of the node. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+60                                      \{
+61     totalCost = cost;
+62 \}
+\end{DoxyCode}
+\index{Layoutnodes@{Layoutnodes}!set\+Heuristic\+Cost@{set\+Heuristic\+Cost}}
+\index{set\+Heuristic\+Cost@{set\+Heuristic\+Cost}!Layoutnodes@{Layoutnodes}}
+\subsubsection[{\texorpdfstring{set\+Heuristic\+Cost(double heuristic)}{setHeuristicCost(double heuristic)}}]{\setlength{\rightskip}{0pt plus 5cm}void Layoutnodes\+::set\+Heuristic\+Cost (
+\begin{DoxyParamCaption}
+\item[{double}]{heuristic}
+\end{DoxyParamCaption}
+)}\hypertarget{classLayoutnodes_ab1c3b3cc9cd63a3f9356d6f74c91e65d}{}\label{classLayoutnodes_ab1c3b3cc9cd63a3f9356d6f74c91e65d}
+
+
+Function set\+Heuristic\+Cost. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em heuristic} & of type double \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none Stores the heuristic cost of the node. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+48                                                    \{
+49     heuristicCost = heuristic;
+50 \}
+\end{DoxyCode}
+\index{Layoutnodes@{Layoutnodes}!set\+Node\+Index@{set\+Node\+Index}}
+\index{set\+Node\+Index@{set\+Node\+Index}!Layoutnodes@{Layoutnodes}}
+\subsubsection[{\texorpdfstring{set\+Node\+Index(int index, int column, int row)}{setNodeIndex(int index, int column, int row)}}]{\setlength{\rightskip}{0pt plus 5cm}void Layoutnodes\+::set\+Node\+Index (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{int}]{column, }
+\item[{int}]{row}
+\end{DoxyParamCaption}
+)}\hypertarget{classLayoutnodes_a2aca15040dc4c9928a10b436bd49ddb4}{}\label{classLayoutnodes_a2aca15040dc4c9928a10b436bd49ddb4}
+
+
+Function set\+Node\+Index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & of type int \\
+\hline
+{\em column} & of type int \\
+\hline
+{\em row} & of type int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none The following function stores the index for a node 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+34                                                              \{
+35     nodeIndex = index;
+36     columnIndex = column;
+37     rowIndex = row;
+38     \}
+\end{DoxyCode}
+\index{Layoutnodes@{Layoutnodes}!set\+Parent\+Index@{set\+Parent\+Index}}
+\index{set\+Parent\+Index@{set\+Parent\+Index}!Layoutnodes@{Layoutnodes}}
+\subsubsection[{\texorpdfstring{set\+Parent\+Index(int p\+Index)}{setParentIndex(int pIndex)}}]{\setlength{\rightskip}{0pt plus 5cm}void Layoutnodes\+::set\+Parent\+Index (
+\begin{DoxyParamCaption}
+\item[{int}]{p\+Index}
+\end{DoxyParamCaption}
+)}\hypertarget{classLayoutnodes_a5b34895306f7ed2780fed6e0d9518a26}{}\label{classLayoutnodes_a5b34895306f7ed2780fed6e0d9518a26}
+
+
+Function set\+Parent\+Index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Index} & of type int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none The following function initializes the parent (p\+Index) of the node. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+40                                            \{
+41     parentIndex = pIndex;
+42 \}
+\end{DoxyCode}
+\index{Layoutnodes@{Layoutnodes}!set\+Path\+Cost@{set\+Path\+Cost}}
+\index{set\+Path\+Cost@{set\+Path\+Cost}!Layoutnodes@{Layoutnodes}}
+\subsubsection[{\texorpdfstring{set\+Path\+Cost(double cost)}{setPathCost(double cost)}}]{\setlength{\rightskip}{0pt plus 5cm}void Layoutnodes\+::set\+Path\+Cost (
+\begin{DoxyParamCaption}
+\item[{double}]{cost}
+\end{DoxyParamCaption}
+)}\hypertarget{classLayoutnodes_a2b95c4f7effe08dd465aa190677a1aca}{}\label{classLayoutnodes_a2b95c4f7effe08dd465aa190677a1aca}
+
+
+Function set\+Path\+Cost. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cost} & of type double \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none The following function sets the path\+Cost of the node. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+52                                          \{
+53     pathCost = cost;
+54 \}
+\end{DoxyCode}
+\index{Layoutnodes@{Layoutnodes}!set\+Total\+Cost@{set\+Total\+Cost}}
+\index{set\+Total\+Cost@{set\+Total\+Cost}!Layoutnodes@{Layoutnodes}}
+\subsubsection[{\texorpdfstring{set\+Total\+Cost()}{setTotalCost()}}]{\setlength{\rightskip}{0pt plus 5cm}void Layoutnodes\+::set\+Total\+Cost (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classLayoutnodes_a2a42eef7c888ecac08027e4c6d7e4ee2}{}\label{classLayoutnodes_a2a42eef7c888ecac08027e4c6d7e4ee2}
+
+
+Function set\+Total\+Cost. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none The following function calculates the total\+Cost from heuristic and path cost. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+56                                \{
+57     totalCost = pathCost + 0.1*heuristicCost;
+58 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Layoutnodes_8hpp}{Layoutnodes.\+hpp}\item 
+app/\hyperlink{Layoutnodes_8cpp}{Layoutnodes.\+cpp}\end{DoxyCompactItemize}

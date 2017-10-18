@@ -1,0 +1,204 @@
+\hypertarget{AstarTest_8cpp}{}\section{test/\+Astar\+Test.cpp File Reference}
+\label{AstarTest_8cpp}\index{test/\+Astar\+Test.\+cpp@{test/\+Astar\+Test.\+cpp}}
+
+
+Test cases for class \hyperlink{classAstar}{Astar}.  
+
+
+{\ttfamily \#include $<$gmock/gmock.\+h$>$}\\*
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\\*
+{\ttfamily \#include $<$memory$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}Astar.\+hpp\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{AstarTest_8cpp_add770076cdfe130fc7f98ee2d87591fc}{T\+E\+ST} (Astar\+Create\+Node\+Test1, test\+Create\+Node\+For\+Out\+Of\+Bound\+Startand\+End\+Pt)
+\begin{DoxyCompactList}\small\item\em Case to test for out of bound start and end point. \end{DoxyCompactList}\item 
+\hyperlink{AstarTest_8cpp_a59b877d5a98d5b656b72fa2877fb6ea0}{T\+E\+ST} (Astar\+Create\+Node\+Test2, test\+Create\+Node\+For\+In\+Bound\+Startand\+End\+Pt)
+\begin{DoxyCompactList}\small\item\em Case to test successful working for inrange start and end point. \end{DoxyCompactList}\item 
+\hyperlink{AstarTest_8cpp_aeba2dd7a12f29be6fb3f68f7d78223cc}{T\+E\+ST} (Astar\+Identify\+Node\+Test1, test\+Identfy\+Node\+For\+Obstacle\+Co\+Ordinate)
+\begin{DoxyCompactList}\small\item\em Case to test for removal of obstacle coordinate. \end{DoxyCompactList}\item 
+\hyperlink{AstarTest_8cpp_a81a35331b4bb1a9c5ea6566c9304fd12}{T\+E\+ST} (Astar\+Identify\+Node\+Test2, test\+Identfy\+Node\+For\+Node\+Co\+Ordinate)
+\begin{DoxyCompactList}\small\item\em Case to test for successful identification of nodeindex from node coordinates. \end{DoxyCompactList}\item 
+\hyperlink{AstarTest_8cpp_aaf08d8aac3202876cff5cbc781efa9fe}{T\+E\+ST} (Astar\+Plan\+Path\+Test, test\+Shortest\+Path\+For\+Known\+Map)
+\begin{DoxyCompactList}\small\item\em Case to test successful calculation of shortest path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classAstar}{Astar} $>$ \hyperlink{AstarTest_8cpp_a3b9a0c678dc2628936b8c33f4295ab78}{test\+Astar} = std\+::make\+\_\+shared$<$\hyperlink{classAstar}{Astar}$>$()
+\item 
+std\+::vector$<$ int $>$ \hyperlink{AstarTest_8cpp_aaf920dd8fc3cf1634d97e079efba9ba4}{test\+Map\+Array}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Test cases for class \hyperlink{classAstar}{Astar}. 
+
+\begin{DoxyAuthor}{Author}
+Senthil Hariharan Arul 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+M\+IT License 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\index{Astar\+Test.\+cpp@{Astar\+Test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!Astar\+Test.\+cpp@{Astar\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Astar\+Create\+Node\+Test1, test\+Create\+Node\+For\+Out\+Of\+Bound\+Startand\+End\+Pt)}{TEST(AstarCreateNodeTest1, testCreateNodeForOutOfBoundStartandEndPt)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{Astar\+Create\+Node\+Test1}]{, }
+\item[{test\+Create\+Node\+For\+Out\+Of\+Bound\+Startand\+End\+Pt}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{AstarTest_8cpp_add770076cdfe130fc7f98ee2d87591fc}{}\label{AstarTest_8cpp_add770076cdfe130fc7f98ee2d87591fc}
+
+
+Case to test for out of bound start and end point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+49                                                                      \{
+50     \hyperlink{classMap}{Map} \hyperlink{MapTest_8cpp_ab500cee64ce2f75d5f7a0da0fd7fad81}{testMap};
+51     testMap.\hyperlink{classMap_aca6589cba2756d406cb360502d29fab3}{storeMap}(\hyperlink{AstarTest_8cpp_aaf920dd8fc3cf1634d97e079efba9ba4}{testMapArray});
+52     \textcolor{keywordtype}{int} startPt = -1;
+53     \textcolor{keywordtype}{int} endPt = 111;
+54     ASSERT\_FALSE(\hyperlink{AstarTest_8cpp_a3b9a0c678dc2628936b8c33f4295ab78}{testAstar}->createNodeList(testMap, startPt, endPt));
+55 \}
+\end{DoxyCode}
+\index{Astar\+Test.\+cpp@{Astar\+Test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!Astar\+Test.\+cpp@{Astar\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Astar\+Create\+Node\+Test2, test\+Create\+Node\+For\+In\+Bound\+Startand\+End\+Pt)}{TEST(AstarCreateNodeTest2, testCreateNodeForInBoundStartandEndPt)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{Astar\+Create\+Node\+Test2}]{, }
+\item[{test\+Create\+Node\+For\+In\+Bound\+Startand\+End\+Pt}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{AstarTest_8cpp_a59b877d5a98d5b656b72fa2877fb6ea0}{}\label{AstarTest_8cpp_a59b877d5a98d5b656b72fa2877fb6ea0}
+
+
+Case to test successful working for inrange start and end point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+63                                                                   \{
+64     \hyperlink{classMap}{Map} \hyperlink{MapTest_8cpp_ab500cee64ce2f75d5f7a0da0fd7fad81}{testMap};
+65     testMap.\hyperlink{classMap_aca6589cba2756d406cb360502d29fab3}{storeMap}(\hyperlink{AstarTest_8cpp_aaf920dd8fc3cf1634d97e079efba9ba4}{testMapArray});
+66     \textcolor{keywordtype}{int} startPt = 1;
+67     \textcolor{keywordtype}{int} endPt = 11;
+68     ASSERT\_TRUE(\hyperlink{AstarTest_8cpp_a3b9a0c678dc2628936b8c33f4295ab78}{testAstar}->createNodeList(testMap, startPt, endPt));
+69 \}
+\end{DoxyCode}
+\index{Astar\+Test.\+cpp@{Astar\+Test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!Astar\+Test.\+cpp@{Astar\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Astar\+Identify\+Node\+Test1, test\+Identfy\+Node\+For\+Obstacle\+Co\+Ordinate)}{TEST(AstarIdentifyNodeTest1, testIdentfyNodeForObstacleCoOrdinate)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{Astar\+Identify\+Node\+Test1}]{, }
+\item[{test\+Identfy\+Node\+For\+Obstacle\+Co\+Ordinate}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{AstarTest_8cpp_aeba2dd7a12f29be6fb3f68f7d78223cc}{}\label{AstarTest_8cpp_aeba2dd7a12f29be6fb3f68f7d78223cc}
+
+
+Case to test for removal of obstacle coordinate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+76                                                                    \{
+77     ASSERT\_EQ(\hyperlink{AstarTest_8cpp_a3b9a0c678dc2628936b8c33f4295ab78}{testAstar}->identifyNode(0, 4), 9999);
+78 \}
+\end{DoxyCode}
+\index{Astar\+Test.\+cpp@{Astar\+Test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!Astar\+Test.\+cpp@{Astar\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Astar\+Identify\+Node\+Test2, test\+Identfy\+Node\+For\+Node\+Co\+Ordinate)}{TEST(AstarIdentifyNodeTest2, testIdentfyNodeForNodeCoOrdinate)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{Astar\+Identify\+Node\+Test2}]{, }
+\item[{test\+Identfy\+Node\+For\+Node\+Co\+Ordinate}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{AstarTest_8cpp_a81a35331b4bb1a9c5ea6566c9304fd12}{}\label{AstarTest_8cpp_a81a35331b4bb1a9c5ea6566c9304fd12}
+
+
+Case to test for successful identification of nodeindex from node coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+86                                                                \{
+87     ASSERT\_EQ(\hyperlink{AstarTest_8cpp_a3b9a0c678dc2628936b8c33f4295ab78}{testAstar}->identifyNode(0, 2), 2);
+88 \}
+\end{DoxyCode}
+\index{Astar\+Test.\+cpp@{Astar\+Test.\+cpp}!T\+E\+ST@{T\+E\+ST}}
+\index{T\+E\+ST@{T\+E\+ST}!Astar\+Test.\+cpp@{Astar\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T(\+Astar\+Plan\+Path\+Test, test\+Shortest\+Path\+For\+Known\+Map)}{TEST(AstarPlanPathTest, testShortestPathForKnownMap)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+ST (
+\begin{DoxyParamCaption}
+\item[{Astar\+Plan\+Path\+Test}]{, }
+\item[{test\+Shortest\+Path\+For\+Known\+Map}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{AstarTest_8cpp_aaf08d8aac3202876cff5cbc781efa9fe}{}\label{AstarTest_8cpp_aaf08d8aac3202876cff5cbc781efa9fe}
+
+
+Case to test successful calculation of shortest path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+95                                                      \{
+96     \hyperlink{classMap}{Map} \hyperlink{MapTest_8cpp_ab500cee64ce2f75d5f7a0da0fd7fad81}{testMap};
+97     testMap.\hyperlink{classMap_aca6589cba2756d406cb360502d29fab3}{storeMap}(\hyperlink{AstarTest_8cpp_aaf920dd8fc3cf1634d97e079efba9ba4}{testMapArray});
+98     \hyperlink{AstarTest_8cpp_a3b9a0c678dc2628936b8c33f4295ab78}{testAstar}->setStartPoint(2);
+99     \hyperlink{AstarTest_8cpp_a3b9a0c678dc2628936b8c33f4295ab78}{testAstar}->setEndPoint(17);
+100     ASSERT\_EQ(\hyperlink{AstarTest_8cpp_a3b9a0c678dc2628936b8c33f4295ab78}{testAstar}->planPath(), 6);
+101 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\index{Astar\+Test.\+cpp@{Astar\+Test.\+cpp}!test\+Astar@{test\+Astar}}
+\index{test\+Astar@{test\+Astar}!Astar\+Test.\+cpp@{Astar\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{test\+Astar}{testAstar}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<${\bf Astar}$>$ test\+Astar = std\+::make\+\_\+shared$<${\bf Astar}$>$()}\hypertarget{AstarTest_8cpp_a3b9a0c678dc2628936b8c33f4295ab78}{}\label{AstarTest_8cpp_a3b9a0c678dc2628936b8c33f4295ab78}
+\index{Astar\+Test.\+cpp@{Astar\+Test.\+cpp}!test\+Map\+Array@{test\+Map\+Array}}
+\index{test\+Map\+Array@{test\+Map\+Array}!Astar\+Test.\+cpp@{Astar\+Test.\+cpp}}
+\subsubsection[{\texorpdfstring{test\+Map\+Array}{testMapArray}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$int$>$ test\+Map\+Array}\hypertarget{AstarTest_8cpp_aaf920dd8fc3cf1634d97e079efba9ba4}{}\label{AstarTest_8cpp_aaf920dd8fc3cf1634d97e079efba9ba4}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+\{1, 1, 1, 1, 0, 1, 0,
+                               0, 0, 0, 1, 1, 0, 0,
+                               0, 0, 1, 1, 1, 1, 1,
+                               1, 1, 1, 1, 1, 1, 0\}
+\end{DoxyCode}

@@ -1,0 +1,94 @@
+\hypertarget{app_2main_8cpp}{}\section{app/main.cpp File Reference}
+\label{app_2main_8cpp}\index{app/main.\+cpp@{app/main.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$memory$>$}\\*
+{\ttfamily \#include $<$list$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include \char`\"{}Astar.\+hpp\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{app_2main_8cpp_a322565ccf348d13e4d3de13af771e5fc}{debug}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{app_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{app/main.\+cpp@{app/main.\+cpp}!debug@{debug}}
+\index{debug@{debug}!app/main.\+cpp@{app/main.\+cpp}}
+\subsubsection[{\texorpdfstring{debug}{debug}}]{\setlength{\rightskip}{0pt plus 5cm}\#define debug}\hypertarget{app_2main_8cpp_a322565ccf348d13e4d3de13af771e5fc}{}\label{app_2main_8cpp_a322565ccf348d13e4d3de13af771e5fc}
+
+
+\subsection{Function Documentation}
+\index{app/main.\+cpp@{app/main.\+cpp}!main@{main}}
+\index{main@{main}!app/main.\+cpp@{app/main.\+cpp}}
+\subsubsection[{\texorpdfstring{main()}{main()}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{app_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\label{app_2main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+\begin{DoxyCode}
+40            \{
+41     \hyperlink{classAstar}{Astar} a;
+42     \hyperlink{classMap}{Map} warehouseMap;
+43 \textcolor{preprocessor}{    #ifdef debug}
+44     std::vector<int> mapArray \{1, 1, 1, 1, 0, 1, 0,
+45                                0, 0, 0, 1, 1, 0, 0,
+46                                0, 0, 1, 1, 1, 1, 1,
+47                                1, 1, 1, 1, 1, 1, 0\};
+48 \textcolor{preprocessor}{    #endif}
+49     \textcolor{keywordtype}{int} startPt, endPt;
+50     \textcolor{keywordtype}{int} userChoice;
+51     \textcolor{comment}{// menu}
+52     std::cout << \textcolor{stringliteral}{"Astar Path Planning using C++"} << std::endl;
+53     std::cout << \textcolor{stringliteral}{"Choose which map to use: "} << std::endl;
+54     std::cout << \textcolor{stringliteral}{"1) default map"} << std::endl;
+55     std::cout << \textcolor{stringliteral}{"2) load map"} << std::endl;
+56     std::cin >> userChoice;
+57     \textcolor{keywordflow}{if} (userChoice == 1) \{
+58         warehouseMap.\hyperlink{classMap_aca6589cba2756d406cb360502d29fab3}{storeMap}(mapArray);
+59         warehouseMap.\hyperlink{classMap_ac5af28a5fed55d9ca5d1dab5cb9f3f9c}{displayMap}();
+60     \} \textcolor{keywordflow}{else} \{
+61         std::cout << \textcolor{stringliteral}{"Please Enter the full path of the Map (.csv) file"};
+62         std::cout << std::endl;
+63         std::string mapPath;
+64         std::cin >> mapPath;
+65         warehouseMap.\hyperlink{classMap_a9359d68382e0c472217d4aeddceeeed8}{loadMap}(mapPath);
+66         warehouseMap.\hyperlink{classMap_ac5af28a5fed55d9ca5d1dab5cb9f3f9c}{displayMap}();
+67     \}
+68     std::cout << std::endl;
+69     std::cout << \textcolor{stringliteral}{"The numbers in the map indicate the node index "};
+70     std::cout << \textcolor{stringliteral}{"and \(\backslash\)"X\(\backslash\)" indicate obstacles. Enter the "};
+71     std::cout << \textcolor{stringliteral}{"node index of the Start and End points: "};
+72     std::cout << std::endl;
+73     std::cin >> startPt >> endPt;
+74     \textcolor{keywordtype}{bool} success = a.\hyperlink{classAstar_acdbb3ef57940f83b0608c97450d084bc}{createNodeList}(warehouseMap, startPt-1, endPt-1);
+75     \textcolor{keywordflow}{if} (success == \textcolor{keyword}{true}) \{
+76         \textcolor{keywordtype}{int} noOfSteps;
+77         noOfSteps = a.\hyperlink{classAstar_a0d1f14dee942f1afd329ffd52c1716a1}{planPath}();
+78         \textcolor{keywordflow}{if} (noOfSteps == 0) \{
+79             std::cout << \textcolor{stringliteral}{"Start and End Point are same"} << std::endl;
+80             cv::Mat pathDrawing = a.\hyperlink{classAstar_a507163e302ae54ac912b75028a00aa42}{displayMap}();
+81             cv::imshow(\textcolor{stringliteral}{"Planned Path"}, pathDrawing);
+82             cv::waitKey(0);
+83         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (noOfSteps == -1) \{
+84             std::cout << \textcolor{stringliteral}{"The no possible path between the two points"};
+85         \} \textcolor{keywordflow}{else} \{
+86             std::cout << \textcolor{stringliteral}{"Number of Steps taken in the shortest path is: "};
+87             std::cout << noOfSteps << std::endl;
+88             cv::Mat pathDrawing = a.\hyperlink{classAstar_a507163e302ae54ac912b75028a00aa42}{displayMap}();
+89             cv::imshow(\textcolor{stringliteral}{"Planned Path"}, pathDrawing);
+90             cv::waitKey(0);
+91         \}
+92     \} \textcolor{keywordflow}{else} \{
+93         std::cout << \textcolor{stringliteral}{"Enter a valid start and end point"} << std::endl;
+94     \}
+95     \textcolor{keywordflow}{return} 0;
+96 \}
+\end{DoxyCode}

@@ -1,0 +1,584 @@
+\hypertarget{classAstar}{}\section{Astar Class Reference}
+\label{classAstar}\index{Astar@{Astar}}
+
+
+Class \hyperlink{classAstar}{Astar} The following class \hyperlink{classAstar}{Astar} aids in calculation of the the shortest path between the user input start and end point using \hyperlink{classAstar}{Astar} path planning. It also implements a method display\+Map to produce a image of the path using Open\+CV.  
+
+
+
+
+{\ttfamily \#include $<$Astar.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAstar_a0e59f5e736107ddea7cc16dd5e4a2d88}{Astar} ()
+\begin{DoxyCompactList}\small\item\em constructor \hyperlink{classAstar}{Astar} \end{DoxyCompactList}\item 
+void \hyperlink{classAstar_ab3ad1479ec00c63b1baff5f8eb67c660}{set\+Start\+Point} (int start\+Index)
+\begin{DoxyCompactList}\small\item\em Function Set\+Start\+Point. \end{DoxyCompactList}\item 
+void \hyperlink{classAstar_ac50aa092d84b977a004e74fdda40307b}{set\+End\+Point} (int end\+Index)
+\begin{DoxyCompactList}\small\item\em Function Set\+End\+Point. \end{DoxyCompactList}\item 
+void \hyperlink{classAstar_a28be3eafec9143958bab3164cef78342}{calc\+Path\+Cost} (int id)
+\begin{DoxyCompactList}\small\item\em Function calc\+Path\+Cost. \end{DoxyCompactList}\item 
+void \hyperlink{classAstar_a9963e9a8ba32f78b01d35b8d9cfc6900}{calc\+Heuristic\+Cost} (int node, \hyperlink{classLayoutnodes}{Layoutnodes} goal)
+\begin{DoxyCompactList}\small\item\em Function calc\+Heuristic\+Cost. \end{DoxyCompactList}\item 
+bool \hyperlink{classAstar_acdbb3ef57940f83b0608c97450d084bc}{create\+Node\+List} (\hyperlink{classMap}{Map} warehouse\+Layout, int start\+Pt, int end\+Pt)
+\begin{DoxyCompactList}\small\item\em Function create\+Node\+List. \end{DoxyCompactList}\item 
+int \hyperlink{classAstar_a0d1f14dee942f1afd329ffd52c1716a1}{plan\+Path} ()
+\begin{DoxyCompactList}\small\item\em Function plaan\+Path. \end{DoxyCompactList}\item 
+int \hyperlink{classAstar_a109c83eda957a93365b25175bf53a35d}{identify\+Node} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Function identify\+Node. \end{DoxyCompactList}\item 
+bool \hyperlink{classAstar_a1adfbc35ff083175e4e3e28ec4f6771d}{in\+Open\+List} (int id)
+\begin{DoxyCompactList}\small\item\em Function in\+Open\+List. \end{DoxyCompactList}\item 
+bool \hyperlink{classAstar_a5166499b45a2a89401deb2bd5b73abfe}{in\+Closed\+List} (int id)
+\begin{DoxyCompactList}\small\item\em Function in\+Closed\+List. \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{classAstar_a507163e302ae54ac912b75028a00aa42}{display\+Map} ()
+\begin{DoxyCompactList}\small\item\em Function display\+Map. \end{DoxyCompactList}\item 
+\hyperlink{classAstar_ac7df7136e93c1f902b3e3602d0add30c}{$\sim$\+Astar} ()
+\begin{DoxyCompactList}\small\item\em destructor \hyperlink{classAstar}{Astar} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{classAstar}{Astar} The following class \hyperlink{classAstar}{Astar} aids in calculation of the the shortest path between the user input start and end point using \hyperlink{classAstar}{Astar} path planning. It also implements a method display\+Map to produce a image of the path using Open\+CV. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Astar@{Astar}!Astar@{Astar}}
+\index{Astar@{Astar}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{Astar()}{Astar()}}]{\setlength{\rightskip}{0pt plus 5cm}Astar\+::\+Astar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAstar_a0e59f5e736107ddea7cc16dd5e4a2d88}{}\label{classAstar_a0e59f5e736107ddea7cc16dd5e4a2d88}
+
+
+constructor \hyperlink{classAstar}{Astar} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none initializes values of start\+Point, end\+Point, map\+Column and map\+Row. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+85             \{
+86     startPoint = 0;
+87     endPoint = 0;
+88     mapColumn = 0;
+89     mapRow = 0;
+90     \}
+\end{DoxyCode}
+\index{Astar@{Astar}!````~Astar@{$\sim$\+Astar}}
+\index{````~Astar@{$\sim$\+Astar}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{$\sim$\+Astar()}{~Astar()}}]{\setlength{\rightskip}{0pt plus 5cm}Astar\+::$\sim$\+Astar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classAstar_ac7df7136e93c1f902b3e3602d0add30c}{}\label{classAstar_ac7df7136e93c1f902b3e3602d0add30c}
+
+
+destructor \hyperlink{classAstar}{Astar} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+179 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Astar@{Astar}!calc\+Heuristic\+Cost@{calc\+Heuristic\+Cost}}
+\index{calc\+Heuristic\+Cost@{calc\+Heuristic\+Cost}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{calc\+Heuristic\+Cost(int node, Layoutnodes goal)}{calcHeuristicCost(int node, Layoutnodes goal)}}]{\setlength{\rightskip}{0pt plus 5cm}void Astar\+::calc\+Heuristic\+Cost (
+\begin{DoxyParamCaption}
+\item[{int}]{node, }
+\item[{{\bf Layoutnodes}}]{goal}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_a9963e9a8ba32f78b01d35b8d9cfc6900}{}\label{classAstar_a9963e9a8ba32f78b01d35b8d9cfc6900}
+
+
+Function calc\+Heuristic\+Cost. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & of type int \\
+\hline
+{\em goal} & of type \hyperlink{classLayoutnodes}{Layoutnodes} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none The following function calculates the straight line cost between current node and end(goal) point. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+231                                                         \{
+232     \textcolor{keywordtype}{int} x1 = nodeList[node].getColumnIndex();
+233     \textcolor{keywordtype}{int} y1 = nodeList[node].getRowIndex();
+234     \textcolor{keywordtype}{int} x2 = goal.\hyperlink{classLayoutnodes_a290cfb6a96b0beb9e764442f2c79a535}{getColumnIndex}();
+235     \textcolor{keywordtype}{int} y2 = goal.\hyperlink{classLayoutnodes_a4032ebcb6fb8af88214ec35e6598cfce}{getRowIndex}();
+236     \textcolor{keywordtype}{double} distance = sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
+237     nodeList[node].setHeuristicCost(distance);
+238 \}
+\end{DoxyCode}
+\index{Astar@{Astar}!calc\+Path\+Cost@{calc\+Path\+Cost}}
+\index{calc\+Path\+Cost@{calc\+Path\+Cost}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{calc\+Path\+Cost(int id)}{calcPathCost(int id)}}]{\setlength{\rightskip}{0pt plus 5cm}void Astar\+::calc\+Path\+Cost (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_a28be3eafec9143958bab3164cef78342}{}\label{classAstar_a28be3eafec9143958bab3164cef78342}
+
+
+Function calc\+Path\+Cost. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & of type int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none calculates path cost between current node and parent node. 
+\end{DoxyReturn}
+\index{Astar@{Astar}!create\+Node\+List@{create\+Node\+List}}
+\index{create\+Node\+List@{create\+Node\+List}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{create\+Node\+List(\+Map warehouse\+Layout, int start\+Pt, int end\+Pt)}{createNodeList(Map warehouseLayout, int startPt, int endPt)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Astar\+::create\+Node\+List (
+\begin{DoxyParamCaption}
+\item[{{\bf Map}}]{warehouse\+Layout, }
+\item[{int}]{start\+Pt, }
+\item[{int}]{end\+Pt}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_acdbb3ef57940f83b0608c97450d084bc}{}\label{classAstar_acdbb3ef57940f83b0608c97450d084bc}
+
+
+Function create\+Node\+List. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em warehouse\+Layout} & of type \hyperlink{classMap}{Map} \\
+\hline
+{\em start\+Pt} & of type int \\
+\hline
+{\em end\+Pt} & of type int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool (true or false) The following function creates a list of possible nodes (neglecting obstacles) for the given \hyperlink{classMap}{Map}. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+43                                                                       \{
+44     std::vector<int> map = warehouseLayout.\hyperlink{classMap_a0b3456dfc306a8bfbf890e4e3abcb7e0}{getMap}();
+45     \hyperlink{classLayoutnodes}{Layoutnodes} node;
+46     mapColumn = warehouseLayout.\hyperlink{classMap_ac442fa95e77caa955817ce6c1cf16211}{returnColumn}();
+47     mapRow = warehouseLayout.\hyperlink{classMap_aa48eb6ddf2b936c52a79c116e093dbef}{returnRow}();
+48     \textcolor{keywordtype}{int} index = 0;
+49     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < mapRow; i++) \{
+50         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < mapColumn; j++) \{
+51             \textcolor{keywordflow}{if} (map[i*mapColumn + j] == 1) \{
+52                 node.\hyperlink{classLayoutnodes_a2aca15040dc4c9928a10b436bd49ddb4}{setNodeIndex}(index++, j, i);
+53                 nodeList.emplace\_back(node);
+54             \}
+55         \}
+56     \}
+57 \textcolor{preprocessor}{    #ifdef testing}
+58     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i =0; i < index; i++) \{
+59         nodeList[i].output();
+60     \}
+61 \textcolor{preprocessor}{    #endif}
+62     \textcolor{keywordflow}{if} (startPt >= 0 && endPt >= 0 && (\textcolor{keywordtype}{unsigned})startPt < nodeList.size() && (unsigned)endPt < nodeList.
+      size()) \{
+63         \hyperlink{classAstar_ab3ad1479ec00c63b1baff5f8eb67c660}{setStartPoint}(startPt);
+64         \hyperlink{classAstar_ac50aa092d84b977a004e74fdda40307b}{setEndPoint}(endPt);
+65         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+66     \} \textcolor{keywordflow}{else} \{
+67         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+68     \}
+69 \}
+\end{DoxyCode}
+\index{Astar@{Astar}!display\+Map@{display\+Map}}
+\index{display\+Map@{display\+Map}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{display\+Map()}{displayMap()}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat Astar\+::display\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_a507163e302ae54ac912b75028a00aa42}{}\label{classAstar_a507163e302ae54ac912b75028a00aa42}
+
+
+Function display\+Map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+display of type Mat (Open\+CV Matrix) The following function returns true if a node of the given is in the close\+List, else returns false. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+240                         \{
+241     \textcolor{keywordtype}{int} sqW = 50;
+242     \textcolor{keywordtype}{int} iSqW = 45;
+243     \textcolor{keywordtype}{int} xLength = mapColumn*sqW, yLength = mapRow*sqW+40;
+244     drawing = Mat::zeros(Size(xLength, yLength), CV\_8UC3);
+245     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < mapRow; i++) \{
+246         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < mapColumn; j++) \{
+247             \textcolor{keywordtype}{int} pathFlag = 0;
+248             \textcolor{keywordtype}{int} blockFlag = 1;
+249             \textcolor{keywordtype}{int} firstPt = 0, lastPt = 0;
+250             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} n : path) \{
+251                 \textcolor{keywordflow}{if} (n.getRowIndex() == i && n.getColumnIndex() == j) \{
+252                     pathFlag = 1;
+253                     \textcolor{keywordflow}{if} (n.getIndex() == startPoint)
+254                        firstPt = 1;
+255                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (n.getIndex() == endPoint)
+256                        lastPt = 1;
+257                 \}
+258             \}
+259             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} n : nodeList) \{
+260                 \textcolor{keywordflow}{if} (n.getRowIndex() == i && n.getColumnIndex() == j) \{
+261                     blockFlag = 0;
+262                 \}
+263             \}
+264             \textcolor{keywordflow}{if} (pathFlag == 1) \{
+265                 rectangle(drawing, Point(j*sqW, i*sqW), Point(j*sqW+sqW, i*sqW+sqW), Scalar(255, 255, 255),
+       1, CV\_AA, 0);
+266                 \textcolor{keywordflow}{if} (firstPt == 1)
+267                 rectangle(drawing, Point(j*sqW+2, i*sqW+2), Point(j*sqW+2+iSqW, i*sqW+2+iSqW), Scalar(0, 25
+      5, 255), -1, CV\_AA, 0);
+268                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (lastPt == 1)
+269                 rectangle(drawing, Point(j*sqW+2, i*sqW+2), Point(j*sqW+2+iSqW, i*sqW+2+iSqW), Scalar(0, 0,
+       255), -1, CV\_AA, 0);
+270                 \textcolor{keywordflow}{else}
+271                 rectangle(drawing, Point(j*sqW+2, i*sqW+2), Point(j*sqW+2+iSqW, i*sqW+2+iSqW), Scalar(0, 25
+      5, 0), -1, CV\_AA, 0);
+272             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (blockFlag == 1) \{
+273                 rectangle(drawing, Point(j*sqW, i*sqW), Point(j*sqW+sqW, i*sqW+sqW), Scalar(255, 255, 255),
+       1, CV\_AA, 0);
+274                 rectangle(drawing, Point(j*sqW+2, i*sqW+2), Point(j*sqW+2+iSqW, i*sqW+2+iSqW), Scalar(128, 
+      128, 128), -1, CV\_AA, 0);
+275             \} \textcolor{keywordflow}{else} \{
+276                 rectangle(drawing, Point(j*sqW, i*sqW), Point(j*sqW+sqW, i*sqW+sqW), Scalar(255, 255, 255),
+       1, CV\_AA, 0);
+277               \}
+278        \}
+279     \}
+280     rectangle(drawing, Point(10, yLength-35), Point(20, yLength-25), Scalar(0, 255, 255), -1, CV\_AA, 0);
+281     putText(drawing, \textcolor{stringliteral}{"- Start Point"}, Point(25, yLength-25), FONT\_HERSHEY\_SIMPLEX, 0.3, Scalar(255, 255, 25
+      5), 1, 16);
+282     rectangle(drawing, Point(100, yLength-35), Point(110, yLength-25), Scalar(0, 0, 255), -1, CV\_AA, 0);
+283     putText(drawing, \textcolor{stringliteral}{"- End Point"}, Point(125, yLength-25), FONT\_HERSHEY\_SIMPLEX, 0.3, Scalar(255, 255, 255
+      ), 1, 16);
+284     rectangle(drawing, Point(10, yLength-15), Point(20, yLength-5), Scalar(0, 255, 0), -1, CV\_AA, 0);
+285     putText(drawing, \textcolor{stringliteral}{"- Path"}, Point(25, yLength-10), FONT\_HERSHEY\_SIMPLEX, 0.3, Scalar(255, 255, 255), 1, 
+      16);
+286     rectangle(drawing, Point(100, yLength-15), Point(110, yLength-5), Scalar(128, 128, 128), -1, CV\_AA, 0);
+287     putText(drawing, \textcolor{stringliteral}{"- Obstacle"}, Point(125, yLength-10), FONT\_HERSHEY\_SIMPLEX, 0.3, Scalar(255, 255, 255)
+      , 1, 16);
+288 \textcolor{keywordflow}{return} drawing;
+289 \}
+\end{DoxyCode}
+\index{Astar@{Astar}!identify\+Node@{identify\+Node}}
+\index{identify\+Node@{identify\+Node}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{identify\+Node(int x, int y)}{identifyNode(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}int Astar\+::identify\+Node (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_a109c83eda957a93365b25175bf53a35d}{}\label{classAstar_a109c83eda957a93365b25175bf53a35d}
+
+
+Function identify\+Node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & of type int \\
+\hline
+{\em y} & of type int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of type int The following function identifies the node index from the row and column values of the node. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+201                                     \{
+202     \textcolor{keywordtype}{int} found = 0;
+203     \textcolor{keywordtype}{int} index = 0;
+204     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} n : nodeList) \{
+205         \textcolor{comment}{// std::cout<<"\(\backslash\)n row col"<<n.getRowIndex()<<" "<<n.getColumnIndex();}
+206         \textcolor{keywordflow}{if} (n.getRowIndex() == x && n.getColumnIndex() == y) \{
+207             found = 1;
+208             index = n.getIndex();
+209         \}
+210     \}
+211     \textcolor{keywordflow}{if} (found == 1) \{
+212         \textcolor{keywordflow}{return} index;
+213     \} \textcolor{keywordflow}{else} \{
+214         \textcolor{keywordflow}{return} \hyperlink{Astar_8cpp_af2ea9daadfc38f4b5b104224552aabcb}{OBSTACLE};
+215     \}
+216 \}
+\end{DoxyCode}
+\index{Astar@{Astar}!in\+Closed\+List@{in\+Closed\+List}}
+\index{in\+Closed\+List@{in\+Closed\+List}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{in\+Closed\+List(int id)}{inClosedList(int id)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Astar\+::in\+Closed\+List (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_a5166499b45a2a89401deb2bd5b73abfe}{}\label{classAstar_a5166499b45a2a89401deb2bd5b73abfe}
+
+
+Function in\+Closed\+List. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & of type int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool value The following function returns true if a node of the given is in the close\+List, else returns false. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+218                                \{
+219     \textcolor{keywordtype}{int} closedFlag = 0;
+220     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} l : closedList) \{
+221         \textcolor{keywordflow}{if} (l.getIndex() == id)
+222            closedFlag = 1;
+223     \}
+224     \textcolor{keywordflow}{if} (closedFlag == 1)
+225         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+226     \textcolor{keywordflow}{else}
+227         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+228 \}
+\end{DoxyCode}
+\index{Astar@{Astar}!in\+Open\+List@{in\+Open\+List}}
+\index{in\+Open\+List@{in\+Open\+List}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{in\+Open\+List(int id)}{inOpenList(int id)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Astar\+::in\+Open\+List (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_a1adfbc35ff083175e4e3e28ec4f6771d}{}\label{classAstar_a1adfbc35ff083175e4e3e28ec4f6771d}
+
+
+Function in\+Open\+List. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & of type int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool value The following function returns true if a node of the given is in the open\+List, else returns false. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+184                              \{
+185     \textcolor{keywordtype}{int} openFlag = 0;
+186     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} l : openList) \{
+187         \textcolor{keywordflow}{if} (l.getIndex() == id) \{
+188             \textcolor{keywordflow}{if} (l.getCost() > nodeList[id].getCost()) \{
+189                 l.setCost(nodeList[\textcolor{keywordtype}{id}].getCost());
+190             \}
+191             openFlag = 1;
+192         \}
+193     \}
+194     \textcolor{keywordflow}{if} (openFlag == 1) \{
+195         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+196     \} \textcolor{keywordflow}{else} \{
+197         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+198     \}
+199 \}
+\end{DoxyCode}
+\index{Astar@{Astar}!plan\+Path@{plan\+Path}}
+\index{plan\+Path@{plan\+Path}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{plan\+Path()}{planPath()}}]{\setlength{\rightskip}{0pt plus 5cm}int Astar\+::plan\+Path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_a0d1f14dee942f1afd329ffd52c1716a1}{}\label{classAstar_a0d1f14dee942f1afd329ffd52c1716a1}
+
+
+Function plaan\+Path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+shortest\+Path\+Length of type int The following function implements the A$\ast$ algorithm and identifies the shortest path. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+81                     \{
+82     nodeList[startPoint].setHeuristicCost(1);
+83     nodeList[startPoint].setPathCost(0);
+84     nodeList[startPoint].setTotalCost();
+85 
+86     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} a : nodeList) \{
+87         \hyperlink{classAstar_a9963e9a8ba32f78b01d35b8d9cfc6900}{calcHeuristicCost}(a.getIndex(), nodeList[endPoint]);
+88     \}
+89 
+90     openList.emplace\_back(nodeList[startPoint]);
+91 \textcolor{preprocessor}{    #ifdef testing}
+92     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i : openList) \{
+93         std::cout << \textcolor{stringliteral}{"cost"} << i.getCost() << std::endl;
+94     \}
+95     \textcolor{comment}{// std::cout << "openList: " << openList.size() << std::endl;}
+96 \textcolor{preprocessor}{    #endif}
+97 
+98     \hyperlink{classMap}{Map} map;
+99     \textcolor{keyword}{auto} directions = map.\hyperlink{classMap_ae6a1a1f128a7d640c10be63e4308d86d}{returnDirection}();
+100     \textcolor{keywordtype}{int} finalFoundFlag = 0;
+101     \textcolor{keywordflow}{while} (!openList.empty()) \{
+102         openList.sort(\hyperlink{Astar_8cpp_ac4a455b1281148c8ddc3f99087c1d296}{priority});
+103         \hyperlink{classLayoutnodes}{Layoutnodes} currentNode = openList.front();
+104         closedList.emplace\_back(currentNode);
+105         \textcolor{comment}{// std::cout << "after transfer: " << currentNode.getCost() << std::endl;}
+106         openList.pop\_front();
+107 
+108         \textcolor{keywordflow}{if} (currentNode.\hyperlink{classLayoutnodes_ae9d58b708008c5ba3ca9cfa8d5340c25}{getIndex}() == nodeList[endPoint].getIndex()) \{
+109             \textcolor{comment}{// std::cout << "final found";}
+110             finalFoundFlag = 1;
+111 \textcolor{preprocessor}{            #ifdef testing}
+112             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i : closedList) \{
+113                 std::cout << \textcolor{stringliteral}{"\(\backslash\)n Node Index: "}<< i.getIndex() << \textcolor{stringliteral}{" hcost: "} << i.returnHCost() << \textcolor{stringliteral}{" 
+       totalcost: "} << i.getCost() << \textcolor{stringliteral}{" Parent: "} << i.getParentIndex();
+114             \}
+115 \textcolor{preprocessor}{            #endif}
+116             \textcolor{keywordflow}{break};
+117         \} \textcolor{keywordflow}{else} \{
+118         \textcolor{comment}{// neighbour}
+119         \textcolor{keywordtype}{int} cRow = currentNode.\hyperlink{classLayoutnodes_a4032ebcb6fb8af88214ec35e6598cfce}{getRowIndex}();
+120         \textcolor{keywordtype}{int} cCol = currentNode.\hyperlink{classLayoutnodes_a290cfb6a96b0beb9e764442f2c79a535}{getColumnIndex}();
+121         \textcolor{comment}{// std::cout << "\(\backslash\)ncrow " << cRow << "\(\backslash\)tccol " << cCol;}
+122         std::vector<int> neighbourID;
+123         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 4; i++) \{
+124             \textcolor{keywordtype}{int} x = directions[2*i] + cRow;
+125             \textcolor{keywordtype}{int} y = directions[2*i +1] + cCol;
+126             \textcolor{comment}{// std::cout << "\(\backslash\)nx: " << x << "y: " << y << std::endl;}
+127             \textcolor{keywordflow}{if} (x < 0 || y < 0 || x > 3 || y > 6) \{
+128             \textcolor{keywordflow}{continue};
+129             \} \textcolor{keywordflow}{else} \{
+130                 \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = \hyperlink{classAstar_a109c83eda957a93365b25175bf53a35d}{identifyNode}(x, y);
+131                 \textcolor{keywordflow}{if} (\textcolor{keywordtype}{id} != \hyperlink{Astar_8cpp_af2ea9daadfc38f4b5b104224552aabcb}{OBSTACLE}) \{
+132                     \textcolor{keywordtype}{bool} closed = \hyperlink{classAstar_a5166499b45a2a89401deb2bd5b73abfe}{inClosedList}(\textcolor{keywordtype}{id});
+133                     \textcolor{keywordflow}{if} (closed == \textcolor{keyword}{true}) \{
+134                         \textcolor{keywordflow}{continue};
+135                     \} \textcolor{keywordflow}{else} \{
+136                         \textcolor{keywordtype}{bool} open1 = \hyperlink{classAstar_a1adfbc35ff083175e4e3e28ec4f6771d}{inOpenList}(\textcolor{keywordtype}{id});
+137                         \textcolor{keywordflow}{if} (open1 == \textcolor{keyword}{false}) \{
+138                             neighbourID.emplace\_back(\textcolor{keywordtype}{id});
+139                         \}
+140                     \}
+141                 \}
+142             \}
+143         \}
+144         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i : neighbourID) \{
+145             nodeList[i].setParentIndex(currentNode.\hyperlink{classLayoutnodes_ae9d58b708008c5ba3ca9cfa8d5340c25}{getIndex}());
+146             nodeList[i].setPathCost(1);
+147             nodeList[i].setTotalCost();
+148             openList.push\_back(nodeList[i]);
+149 \textcolor{preprocessor}{            #ifdef testing}
+150             std::cout << \textcolor{stringliteral}{"\(\backslash\)nThe openlist size is: "} << openList.size();
+151             std::cout << \textcolor{stringliteral}{"\(\backslash\)nThe closedlist size is: "} << closedList.size();
+152 \textcolor{preprocessor}{            #endif}
+153         \}
+154         \}
+155     \}
+156     std::list<Layoutnodes> pathBuffer = closedList;
+157     pathBuffer.reverse();
+158     \hyperlink{classLayoutnodes}{Layoutnodes} frontNode = pathBuffer.front();
+159     path.emplace\_back(frontNode);
+160     pathBuffer.pop\_front();
+161     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i : pathBuffer) \{
+162         \hyperlink{classLayoutnodes}{Layoutnodes} temp = path.back();
+163         \textcolor{keywordflow}{if} (temp.\hyperlink{classLayoutnodes_aaa5c16494f4240da90d169db0596c0b3}{getParentIndex}() == i.getIndex()) \{
+164             path.emplace\_back(i);
+165         \} \textcolor{keywordflow}{else} \{
+166             \textcolor{keywordflow}{continue};
+167         \}
+168     \}
+169 \textcolor{preprocessor}{    #ifdef testing}
+170     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i : path) \{
+171         std::cout << \textcolor{stringliteral}{"\(\backslash\)nPath list: "} << i.getIndex();
+172     \}
+173 \textcolor{preprocessor}{    #endif}
+174     cv::Mat bufferMat = \hyperlink{classAstar_a507163e302ae54ac912b75028a00aa42}{displayMap}();
+175     \textcolor{keywordtype}{int} shortestPathLength = 0;
+176     \textcolor{keywordflow}{if} (finalFoundFlag == 0) \{
+177         shortestPathLength = -1;
+178     \} \textcolor{keywordflow}{else} \{
+179         shortestPathLength = (closedList.size()-1);
+180     \}
+181     \textcolor{keywordflow}{return} shortestPathLength;
+182 \}
+\end{DoxyCode}
+\index{Astar@{Astar}!set\+End\+Point@{set\+End\+Point}}
+\index{set\+End\+Point@{set\+End\+Point}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{set\+End\+Point(int end\+Index)}{setEndPoint(int endIndex)}}]{\setlength{\rightskip}{0pt plus 5cm}void Astar\+::set\+End\+Point (
+\begin{DoxyParamCaption}
+\item[{int}]{end\+Index}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_ac50aa092d84b977a004e74fdda40307b}{}\label{classAstar_ac50aa092d84b977a004e74fdda40307b}
+
+
+Function Set\+End\+Point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em end\+Index} & of type int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none The following function initializes the values of user defined end(goal) point in the map. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+76                                     \{
+77     endPoint = endIndex;
+78     \textcolor{comment}{// endPoint = 12;}
+79 \}
+\end{DoxyCode}
+\index{Astar@{Astar}!set\+Start\+Point@{set\+Start\+Point}}
+\index{set\+Start\+Point@{set\+Start\+Point}!Astar@{Astar}}
+\subsubsection[{\texorpdfstring{set\+Start\+Point(int start\+Index)}{setStartPoint(int startIndex)}}]{\setlength{\rightskip}{0pt plus 5cm}void Astar\+::set\+Start\+Point (
+\begin{DoxyParamCaption}
+\item[{int}]{start\+Index}
+\end{DoxyParamCaption}
+)}\hypertarget{classAstar_ab3ad1479ec00c63b1baff5f8eb67c660}{}\label{classAstar_ab3ad1479ec00c63b1baff5f8eb67c660}
+
+
+Function Set\+Start\+Point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Index} & of type int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none The following function initializes the values of user defined start point in the map. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+71                                         \{
+72     startPoint = startIndex;
+73     \textcolor{comment}{// startPoint = 2;}
+74 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Astar_8hpp}{Astar.\+hpp}\item 
+app/\hyperlink{Astar_8cpp}{Astar.\+cpp}\end{DoxyCompactItemize}

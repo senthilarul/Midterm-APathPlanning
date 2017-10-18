@@ -1,0 +1,73 @@
+\hypertarget{Astar_8cpp}{}\section{app/\+Astar.cpp File Reference}
+\label{Astar_8cpp}\index{app/\+Astar.\+cpp@{app/\+Astar.\+cpp}}
+
+
+Implementation of \hyperlink{classAstar}{Astar} class methods  Contains functions for path planning calculations and visualizing the path.  
+
+
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$typeinfo$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$list$>$}\\*
+{\ttfamily \#include \char`\"{}Astar.\+hpp\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Astar_8cpp_af2ea9daadfc38f4b5b104224552aabcb}{O\+B\+S\+T\+A\+C\+LE}~9999
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{Astar_8cpp_ac4a455b1281148c8ddc3f99087c1d296}{priority} (\hyperlink{classLayoutnodes}{Layoutnodes} \&node1, \hyperlink{classLayoutnodes}{Layoutnodes} \&node2)
+\begin{DoxyCompactList}\small\item\em Function priority. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of \hyperlink{classAstar}{Astar} class methods  Contains functions for path planning calculations and visualizing the path. 
+
+\begin{DoxyAuthor}{Author}
+Senthil Hariharan Arul 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+M\+IT License 
+\end{DoxyCopyright}
+
+
+\subsection{Macro Definition Documentation}
+\index{Astar.\+cpp@{Astar.\+cpp}!O\+B\+S\+T\+A\+C\+LE@{O\+B\+S\+T\+A\+C\+LE}}
+\index{O\+B\+S\+T\+A\+C\+LE@{O\+B\+S\+T\+A\+C\+LE}!Astar.\+cpp@{Astar.\+cpp}}
+\subsubsection[{\texorpdfstring{O\+B\+S\+T\+A\+C\+LE}{OBSTACLE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+B\+S\+T\+A\+C\+LE~9999}\hypertarget{Astar_8cpp_af2ea9daadfc38f4b5b104224552aabcb}{}\label{Astar_8cpp_af2ea9daadfc38f4b5b104224552aabcb}
+
+
+\subsection{Function Documentation}
+\index{Astar.\+cpp@{Astar.\+cpp}!priority@{priority}}
+\index{priority@{priority}!Astar.\+cpp@{Astar.\+cpp}}
+\subsubsection[{\texorpdfstring{priority(\+Layoutnodes \&node1, Layoutnodes \&node2)}{priority(Layoutnodes &node1, Layoutnodes &node2)}}]{\setlength{\rightskip}{0pt plus 5cm}bool priority (
+\begin{DoxyParamCaption}
+\item[{{\bf Layoutnodes} \&}]{node1, }
+\item[{{\bf Layoutnodes} \&}]{node2}
+\end{DoxyParamCaption}
+)}\hypertarget{Astar_8cpp_ac4a455b1281148c8ddc3f99087c1d296}{}\label{Astar_8cpp_ac4a455b1281148c8ddc3f99087c1d296}
+
+
+Function priority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reference} & to node1 of type \hyperlink{classLayoutnodes}{Layoutnodes} \\
+\hline
+{\em reference} & to node2 of type \hyperlink{classLayoutnodes}{Layoutnodes} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool value The following function returns true if a node1 cost is less than node2 cost, else false. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+291                                                       \{
+292     \textcolor{keywordflow}{if} (node1.\hyperlink{classLayoutnodes_a6671cc8978fcb726aa1c842fecb1b97d}{getCost}() < node2.\hyperlink{classLayoutnodes_a6671cc8978fcb726aa1c842fecb1b97d}{getCost}())
+293         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+294     \textcolor{keywordflow}{else}
+295         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+296 \}
+\end{DoxyCode}
