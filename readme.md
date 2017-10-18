@@ -7,7 +7,7 @@
 ## Overview - A C++ implemntation for A* Path Planning algorithm
 
 Warehouse robots are one among the many uses on which robotics has been implemented. With the aquisition of Kiva robotics by Amazon, the potential in such warehouse logisitics systems is evident. 
-The github repository contains path planning software developed using C++ for ACME Robotics (ENPM808X Midterm project). 
+The github repository implements a software for path planning that aids an warehouse robot in the autonomous navigation. This is developed using C++ for ACME Robotics (A fictional situation for the ENPM808X Midterm project). 
 
 A* Path planning algorithm is very effective for known environment. In this project I am approximating the warehouse robot to operate in such an environment. 
 
@@ -64,7 +64,32 @@ Please vist the link at:
 
 https://docs.google.com/a/terpmail.umd.edu/spreadsheets/d/12z8tL9RKelgzJ8GJdyQ-GIjZYogpATpe3jIa_0ffNng/edit?usp=sharing
 
-## Standard install via command-line
+## Install OpenCV
+Installation can be done using the following website:
+
+https://docs.opencv.org/2.4/doc/tutorials/introduction/linux_install/linux_install.html?
+
+1. Create a temporary directory, which we denote as <cmake_binary_dir>, where you want to put the generated Makefiles, project files as well the object files and output binaries.
+
+2. Enter the <cmake_binary_dir> and type
+```
+cmake [<some optional parameters>] <path to the OpenCV source directory>
+```
+for example
+```
+cd ~/opencv
+mkdir release
+cd release
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..
+```
+
+3. Enter the created temporary directory (<cmake_binary_dir>) and proceed with:
+
+```
+make
+sudo make install
+```
+## Standard install via command-line (How to Build)
 ```
 git clone --recursive https://github.com/senthilarul/Midterm-APathPlanning.git
 cd <path to repository>
@@ -76,7 +101,7 @@ Run tests: ./test/cpp-test
 Run program: ./app/shell-app
 ```
 
-## Building for code coverage (for assignments beginning in Week 4)
+## Building for code coverage
 ```
 sudo apt-get install lcov
 cmake -D COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug ../
@@ -191,3 +216,20 @@ once the installation is over we can generate the Doxygen documentation by runni
 ```
 doxygen ./Doxygen
 ```
+
+## Demo 
+
+To run the demo naviagate to the project directory and enter:
+```
+cd build
+./app/shell-app
+```
+
+The demo runs and gives the user 2 option.
+1) to use a default map
+2) to upload a new map
+
+if the user is uploading a new map they have to enter the full path of the map. Also, the map should be in .csv format. The details regarding developing a .csv file for the map has been discussed earlier.
+
+After the user inputs a map, the map is displays as a combination of numbers and 'X'. The 'X' denote a obstacle, while the number denote the traversable nodes. The user can input the start node from which the robot starts as well as the end node to which it must reach. The software calculates the shortest path and displays the selected path as a openCV diagram.
+
